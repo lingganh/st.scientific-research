@@ -1,4 +1,4 @@
-# ST website introducing scientific research products
+# ST introducing scientific research products website
 ## Requirements
 - PHP >= 8.1
 - Node >= v20.13.1

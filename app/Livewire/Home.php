@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Award;
+use App\Models\Category;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Text;
@@ -16,6 +17,7 @@ class Home extends Component
     public $posts;
     public $awards;
     public $product;
+    public $category;
     public function mount()
     {
         $this->workshop = Workshop::all();
@@ -23,6 +25,7 @@ class Home extends Component
         $this->posts = Post::all();
         $this->awards = Award::with('product')->get();
         $this->product = Product::find('product_id');
+        $this->category = Category::all();
     }
     public function render()
     {

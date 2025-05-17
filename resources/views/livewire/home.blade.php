@@ -1,5 +1,5 @@
 <div>
-    <section id="home" class="hero-slider-container"  >
+    <section id="home" class="hero-slider-container"  style="margin-top: -7%">
         @foreach($workshop as $workshops)
 
         <div class="hero-slider" >
@@ -32,7 +32,7 @@
         @endforeach
         </div>
     </section>
-    <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); margin-top: -55%">
+    <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); margin-top: -88%">
         <div class="container about-section">
             <h2>Bài Viết </h2>
             <div class="article-carousel">
@@ -64,13 +64,23 @@
                             <div class="circle absolute"></div>
                             @if ($loop->iteration % 2 != 0)
                                 <div class="image-section">
-                                    <img
-                                        src="{{ $award->product->img }}"
-                                        alt=""
-                                        width="100"
-                                        height="100"
-                                        loading="lazy"
-                                    />
+                                    @if ($award->product && $award->product->img)
+                                        <img
+                                            src="{{ $award->product->img }}"
+                                            alt="{{ $award->product->name ?? '' }}"
+                                            width="100"
+                                            height="100"
+                                            loading="lazy"
+                                        />
+                                    @else
+                                        <img
+                                            src="https://via.placeholder.com/100"
+                                            alt="Không có ảnh sản phẩm"
+                                            width="100"
+                                            height="100"
+                                            loading="lazy"
+                                        />
+                                    @endif
                                 </div>
                             @endif
                             <article class="text-section">
@@ -84,21 +94,29 @@
                             </article>
                             @if ($loop->iteration % 2 == 0)
                                 <div class="image-section">
-                                    <img
-                                        src="{{ $award->product ->img }}"
-                                        alt=""
-                                        width="100"
-                                        height="100"
-                                        loading="lazy"
-                                    />
+                                    @if ($award->product && $award->product->img)
+                                        <img
+                                            src="{{ $award->product->img }}"
+                                            alt="{{ $award->product->name ?? '' }}"
+                                            width="100"
+                                            height="100"
+                                            loading="lazy"
+                                        />
+                                    @else
+                                        <img
+                                            src="https://via.placeholder.com/100"
+                                            alt="Không có ảnh sản phẩm"
+                                            width="100"
+                                            height="100"
+                                            loading="lazy"
+                                        />
+                                    @endif
                                 </div>
                             @endif
                         </div>
-                        @endforeach
-
                     </div>
+                @endforeach
             </div>
-        </div>
     </section>
 
     <section style="background-color: rgb(241, 244, 230);">

@@ -9,7 +9,8 @@
                         <h1 class="hero-text" > {{$workshops->title}} </h1>
                         <br />
 
-                        <p class="hero-subText">{{$workshops->description}}</p>
+                    <p class="hero-subText">{{$workshops->description}}</p>
+
                         <a href="#features" class="cta button">
                             Xem Ngay
                             <i class="fa-solid fa-arrow-right"></i>
@@ -117,6 +118,7 @@
                     </div>
                 @endforeach
             </div>
+        </div>
     </section>
 
     <section style="background-color: rgb(241, 244, 230);">
@@ -124,54 +126,19 @@
             <h2 class="features_heading w-full">Danh Mục Sản Phẩm</h2>
             <div class="ag-format-container">
                 <div class="ag-courses_box   product-carousel"  id="autoScrollingCarousel">
+                    @foreach($category as $cate)
                     <div class="ag-courses_item">
                         <a href="/danh-muc/1" class="ag-courses-item_link">
                             <div class="ag-courses-item_bg"></div>
                             <br>
                             <div class="ag-courses-item_title">
-                                Công Nghệ Thông Tin
+                               {{$cate->name}}
                             </div>
                         </a>
                     </div>
+                    @endforeach
 
-                    <div class="ag-courses_item">
-                        <a href="/danh-muc/2" class="ag-courses-item_link">
-                            <div class="ag-courses-item_bg"></div>
-                            <br>
-                            <div class="ag-courses-item_title">
-                                Nông Nghiệp và Sinh Học
-                            </div>
-                        </a>
-                    </div>
 
-                    <div class="ag-courses_item">
-                        <a href="/danh-muc/3" class="ag-courses-item_link">
-                            <div class="ag-courses-item_bg"></div>
-                            <br>
-                            <div class="ag-courses-item_title">
-                                Khoa Học Xã Hội và Luật
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="ag-courses_item">
-                        <a href="/danh-muc/4" class="ag-courses-item_link">
-                            <div class="ag-courses-item_bg"></div>
-                            <br>
-                            <div class="ag-courses-item_title">
-                                Kinh Tế và Quản Lý
-                            </div>
-                        </a>
-                    </div>
-                    <div class="ag-courses_item">
-                        <a href="/danh-muc/4" class="ag-courses-item_link">
-                            <div class="ag-courses-item_bg"></div>
-                            <br>
-                            <div class="ag-courses-item_title">
-                                Tài Nguyên và Môi Trường
-                            </div>
-                        </a>
-                    </div>
 
                 </div>
             </div>

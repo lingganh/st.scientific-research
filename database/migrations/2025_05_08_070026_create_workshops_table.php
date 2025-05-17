@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('workshops', function (Blueprint $table) {
-            $table->id(); // Trường id tự tăng
-            $table->string('title'); // Tên hội thảo
-            $table->string('slug')->unique()->nullable(); // Đường dẫn thân thiện (URL), duy nhất và có thể null
-            $table->text('description')->nullable(); // Mô tả về hội thảo, có thể null
-            $table->dateTime('start_time')->nullable(); // Thời gian bắt đầu hội thảo
-            $table->dateTime('end_time')->nullable(); // Thời gian kết thúc hội thảo
-            $table->string('location')->nullable(); // Địa điểm tổ chức
-            $table->integer('capacity')->nullable(); // Số lượng người tham gia tối đa
+            $table->id();
+            $table->string('title');
+            $table->string('img')->nullable();
+            $table->text('description')->nullable();
+            $table->dateTime('start_time')->nullable();
+            $table->dateTime('end_time')->nullable();
+            $table->string('location')->nullable();
+            $table->integer('capacity')->nullable();
             $table->timestamps(); // created_at và updated_at
         });
     }

@@ -1,8 +1,8 @@
 <div>
-    <section id="home" class="hero-slider-container">
+    <section id="home" class="hero-slider-container" >
 
 
-        <div class="hero-slider">
+        <div class="hero-slider"  >
 
             <div class="hero-slide">
                 <div class="container hero-section">
@@ -168,7 +168,7 @@
                              <span class="product-catagory">{{$pd->categories->name ?? 'Chưa phân loại'}}</span>
                             <h4><a href="#">{{$pd->name}}</a></h4>
                             <div class="product-bottom-details">
-                                 <div class="product-price"> ${{ number_format($pd->price )  ?? 'Liên Hệ'}}</div>
+                                 <div class="product-price"> {{ number_format($pd->price )  ?? 'Liên Hệ'}}đ</div>
                                 <div class="product-links">
                                     <a href="#"><i class="fa fa-heart"></i></a>
                                     <a href="#"><i class="fa fa-shopping-cart"></i></a>
@@ -177,11 +177,19 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-            </div>
-        </div>
-    </section>
 
+             </div>
+                <div class="text-box">
+                    <a href="{{route('product')}}" class="btn btn-white btn-animate">Xem Thêm</a>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 
     <script src="{{ asset('client/script.js') }}"></script>

@@ -21,8 +21,10 @@ return new class extends Migration
             $table->unsignedBigInteger('idDM')->nullable(); // Khóa ngoại liên kết với bảng danh mục (unsigned big integer), có thể null
             $table->text('moTa')->nullable(); // Trường mô tả sản phẩm (text), có thể null
             $table->timestamps(); // Tạo cột created_at và updated_at
-
-            $table->foreign('idTG')->references('id')->on('authors')->onDelete('set null');
+            $table->double('price')->nullable();
+            $table->integer('count')->nullable();
+            $table->integer('luotBan')->nullable();
+             $table->foreign('idTG')->references('id')->on('authors')->onDelete('set null');
             $table->foreign('idDM')->references('id')->on('categories')->onDelete('set null');
         });
 

@@ -17,7 +17,7 @@ class Product extends Model
         return $this->belongsTo(Author::class, 'idTG');
     }
 
-    public function category(): BelongsTo
+    public function categories()
     {
         return $this->belongsTo(Category::class, 'idDM');
     }

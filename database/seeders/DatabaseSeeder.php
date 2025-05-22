@@ -54,84 +54,107 @@ class DatabaseSeeder extends Seeder
             'idTG' => 1,
             'img' => 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 8,
-            'moTa' => 'Giống lúa thuần chất lượng cao, chịu hạn tốt, năng suất ổn định.'
+            'moTa' => 'Giống lúa thuần chất lượng cao, chịu hạn tốt, năng suất ổn định.',
+            'price'=>1000
         ]);
         Product::create([
             'name' => 'Phần mềm quản lý trang trại thông minh FarmPro',
             'idTG' => 2,
             'img' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 2,
-            'moTa' => 'Giải pháp quản lý toàn diện cho trang trại, từ theo dõi cây trồng, vật nuôi đến quản lý tài chính.'
+            'moTa' => 'Giải pháp quản lý toàn diện cho trang trại, từ theo dõi cây trồng, vật nuôi đến quản lý tài chính.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Sách: Luật Đất đai và các văn bản hướng dẫn thi hành',
             'idTG' => 3,
             'img' => 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 3,
-            'moTa' => 'Tuyển tập các văn bản pháp luật quan trọng về đất đai.'
+            'moTa' => 'Tuyển tập các văn bản pháp luật quan trọng về đất đai.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Mô hình kinh tế tuần hoàn trong nông nghiệp',
             'idTG' => 1,
             'img' => 'https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 4,
-            'moTa' => 'Nghiên cứu về ứng dụng mô hình kinh tế tuần hoàn để phát triển nông nghiệp bền vững.'
+            'moTa' => 'Nghiên cứu về ứng dụng mô hình kinh tế tuần hoàn để phát triển nông nghiệp bền vững.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Thiết bị đo chất lượng nước cầm tay WT-3000',
             'idTG' => 2,
             'img' => 'https://images.unsplash.com/photo-1561571994-3c61c554181a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 10,
-            'moTa' => 'Thiết bị nhỏ gọn, dễ sử dụng để kiểm tra các chỉ số quan trọng của nước.'
+            'moTa' => 'Thiết bị nhỏ gọn, dễ sử dụng để kiểm tra các chỉ số quan trọng của nước.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Máy sấy nông sản đa năng SUNSAY',
             'idTG' => 3,
             'img' => 'https://images.unsplash.com/photo-1594122230683-02c6e95a9b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 6,
-            'moTa' => 'Máy sấy khô các loại nông sản với công nghệ tiên tiến, tiết kiệm năng lượng.'
+            'moTa' => 'Máy sấy khô các loại nông sản với công nghệ tiên tiến, tiết kiệm năng lượng.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Hệ thống giám sát môi trường trang trại iFarm',
             'idTG' => 4,
             'img' => 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 2,
-            'moTa' => 'Hệ thống cảm biến và phần mềm giám sát nhiệt độ, độ ẩm, ánh sáng, dinh dưỡng cho cây trồng.'
+            'moTa' => 'Hệ thống cảm biến và phần mềm giám sát nhiệt độ, độ ẩm, ánh sáng, dinh dưỡng cho cây trồng.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Nghiên cứu về chính sách hỗ trợ tái cơ cấu ngành nông nghiệp',
             'idTG' => 4,
             'img' => 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 4,
-            'moTa' => 'Phân tích và đề xuất các chính sách nhằm thúc đẩy quá trình tái cơ cấu ngành nông nghiệp Việt Nam.'
+            'moTa' => 'Phân tích và đề xuất các chính sách nhằm thúc đẩy quá trình tái cơ cấu ngành nông nghiệp Việt Nam.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Bản đồ sử dụng đất nông nghiệp ứng dụng công nghệ viễn thám',
             'idTG' => 1,
             'img' => 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 5,
-            'moTa' => 'Bản đồ chi tiết về tình hình sử dụng đất nông nghiệp, hỗ trợ quy hoạch và quản lý.'
+            'moTa' => 'Bản đồ chi tiết về tình hình sử dụng đất nông nghiệp, hỗ trợ quy hoạch và quản lý.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Quy trình bảo quản rau quả sau thu hoạch bằng công nghệ MAP',
             'idTG' => 3,
             'img' => 'https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 6,
-            'moTa' => 'Nghiên cứu về quy trình và ứng dụng công nghệ MAP (Modified Atmosphere Packaging) để kéo dài thời gian bảo quản rau quả.'
+            'moTa' => 'Nghiên cứu về quy trình và ứng dụng công nghệ MAP (Modified Atmosphere Packaging) để kéo dài thời gian bảo quản rau quả.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Giống lúa ST25',
             'idTG' => 1,
             'img' => 'https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 8,
-            'moTa' => 'Giống lúa thơm đặc sản, chất lượng gạo ngon, được ưa chuộng trên thị trường.'
+            'moTa' => 'Giống lúa thơm đặc sản, chất lượng gạo ngon, được ưa chuộng trên thị trường.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Máy cấy lúa Kubota NSP-68NSF',
             'idTG' => 4,
             'img' => 'https://images.unsplash.com/photo-1581092921461-39b2f2f8a6b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 10,
-            'moTa' => 'Máy cấy lúa hàng ngang, năng suất cao, tiết kiệm chi phí nhân công.'
+            'moTa' => 'Máy cấy lúa hàng ngang, năng suất cao, tiết kiệm chi phí nhân công.',
+            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Phân bón hữu cơ vi sinh BioGro',
@@ -139,6 +162,8 @@ class DatabaseSeeder extends Seeder
             'img' => 'https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80',
             'idDM' => 9,
             'moTa' => 'Phân bón hữu cơ giúp cải tạo đất, tăng độ phì nhiêu và an toàn cho cây trồng.'
+            ,            'price'=>1000
+
         ]);
         Product::create([
             'name' => 'Thuốc trừ sâu sinh học Neem Oil',

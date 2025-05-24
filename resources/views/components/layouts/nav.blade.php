@@ -28,7 +28,7 @@
                     <a href="{{route('product')}}">Sản Phẩm </a>
                 </li>
                 <li style="--d: 0.2s">
-                    <a href="#features">Hội Thảo</a>
+                    <a href="{{route('workshop')}}">Hội Thảo</a>
                 </li>
                 <li style="--d: 0.3s">
                     <a href="#about">Bài Viết</a>
@@ -45,7 +45,12 @@
                         <span class='badge badge-warning' id='lblCartCount'> 5 </span>
                     </a>
                 <li style="--d: 0.11s">
-                    <a class="nav-link"  href=""><i class="fa-regular fa-circle-user fa-2x"  ></i></a>
+                     @if (!Auth::check())
+                        <a class="nav-link" href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-2x"  ></i></a>
+                    @else
+                        <a class="nav-link" href="{{route('home')}}"><i class="fa-regular fa-circle-user fa-2x"  ></i></a>
+                    @endif
+
                 </li>
             </ul>
 

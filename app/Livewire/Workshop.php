@@ -4,10 +4,10 @@ namespace App\Livewire;
 
 use Livewire\Component;
 
-class Auth extends Component
+class Workshop extends Component
 {
     public function render()
     {
-        return view('livewire.auth');
+        return view('livewire.workshop');
     }
 }

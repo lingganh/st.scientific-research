@@ -4,9 +4,11 @@ use App\Livewire\Login;
 use App\Livewire\Home;
 use App\Livewire\Products;
 use App\Livewire\Signup;
+use App\Livewire\UserProfile;
 use App\Livewire\Workshop;
 use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 
 Route::get('/', function () {
@@ -25,3 +27,5 @@ Route::get('auth/google/callback',[Login::class,'handleGoogleCallback'])->name('
 Route::get('login',Login::class)->name('login');
 Route::get('signup',Signup::class)->name('signup');
 
+//user pro5
+Route::get('profile',UserProfile::class)->name('profile.user');

@@ -2487,3 +2487,198 @@ body {
         transform: translateY(0px);
     }
 }
+/* Styling cho mục menu người dùng và dropdown */
+.nav-links li.user-menu-item {
+    position: relative; /* RẤT QUAN TRỌNG: Làm điểm neo cho dropdown */
+    margin-left: 20px;
+    z-index: 1000;
+}
+
+.dropdown-menu { /* Có thể là div.dropdown-menu hoặc ul.dropdown-menu tùy bạn dùng thẻ gì */
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    padding: 10px 0;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* RẤT QUAN TRỌNG: Quy tắc hover phải chọn đúng phần tử con */
+.user-menu-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Các style cho dropdown-item và logout-button khác giữ nguyên */
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.95em;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-bg);
+    color: var(--accent);
+}
+
+.dropdown-item.logout-form {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    display: block;
+}
+
+.logout-button:hover {
+    background-color: var(--primary-bg);
+    color: var(--accent);
+}
+
+.nav-links .fa-2x {
+    font-size: 1.5em;
+}
+
+/* Responsive adjustments vẫn giữ nguyên */
+@media (max-width: 768px) {
+    .nav-links li.user-menu-item {
+        position: static;
+    }
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        min-width: unset;
+        text-align: center;
+    }
+
+    .dropdown-item, .logout-button {
+        padding: 10px;
+        text-align: center;
+    }
+}/* Styling cho mục menu người dùng và dropdown */
+.nav-links li.user-menu-item {
+    position: relative; /* RẤT QUAN TRỌNG: Làm điểm neo cho dropdown */
+    margin-left: 20px;
+    z-index: 1000;
+}
+
+.dropdown-menu { /* Có thể là div.dropdown-menu hoặc ul.dropdown-menu tùy bạn dùng thẻ gì */
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background-color: var(--light);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    padding: 10px 0;
+    text-align: left;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* RẤT QUAN TRỌNG: Quy tắc hover phải chọn đúng phần tử con */
+.user-menu-item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Các style cho dropdown-item và logout-button khác giữ nguyên */
+.dropdown-item {
+    display: block;
+    padding: 12px 20px;
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 0.95em;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-bg);
+    color: var(--accent);
+}
+
+.dropdown-item.logout-form {
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.logout-button {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 12px 20px;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    display: block;
+}
+
+.logout-button:hover {
+    background-color: var(--primary-bg);
+    color: var(--accent);
+}
+
+.nav-links .fa-2x {
+    font-size: 1.5em;
+}
+
+/* Responsive adjustments vẫn giữ nguyên */
+@media (max-width: 768px) {
+    .nav-links li.user-menu-item {
+        position: static;
+    }
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background-color: transparent;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0;
+        min-width: unset;
+        text-align: center;
+    }
+
+    .dropdown-item, .logout-button {
+        padding: 10px;
+        text-align: center;
+    }
+}

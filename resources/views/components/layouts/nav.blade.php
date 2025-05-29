@@ -41,16 +41,19 @@
                     <a class="nav-link" href="giohang.html"><i class="fa" style="font-size:24px;color:black">&#xf07a;</i>
                         <span class='badge badge-warning' id='lblCartCount'> 5 </span>
                     </a>
-                <li style="--d: 0.11s">
-                     @if (!Auth::check())
-                        <a class="nav-link" href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-2x"  ></i></a>
-                    @else
-                        <a class="nav-link" href="{{route('home')}}"><i class="fa-regular fa-circle-user fa-2x"  ></i></a>
-                    @endif
 
-                </li>
             </ul>
+            @if (!Auth::check())
+                <a class="nav-link" href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-2x"></i></a>
+            @else
 
+                <a class="nav-link user-icon-toggle" href="{{route('profile.user')}}">
+                    <i class="fa-regular fa-circle-user fa-2x"></i>
+
+
+
+
+            @endif
 
         </nav>
     </div>

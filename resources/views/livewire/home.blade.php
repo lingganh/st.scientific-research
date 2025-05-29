@@ -130,7 +130,7 @@
         </div>
     </section>
 
-    <section style="background-color: rgb(241, 244, 230);">
+    <section style="background-color: rgb(241, 244, 230); margin-left:-2%">
         <div class="container features-section relative">
             <h2 class="features_heading w-full">Danh Mục Sản Phẩm</h2>
             <div class="ag-format-container">

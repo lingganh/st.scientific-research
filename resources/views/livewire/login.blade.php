@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="auth-social-logins">
-                        <a href="#" class="social-login-button google-provider">
+                        <a href="{{route('google.login')}}" class="social-login-button google-provider">
                             <img src="https://c.animaapp.com/4fm4rMYc/img/icons8-google-1.svg" alt="Google icon">
                             Đăng Nhập Với Google
                         </a>

@@ -831,13 +831,14 @@ footer {
         .hero-slider-container {
             overflow: hidden; /* Hide elements that go beyond the container */
             width: 100%; /* Make the container full width */
+
         }
 
         .hero-slider {
             display: flex; /* Arrange hero sections horizontally */
             transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
             width: calc(300% - 2 * 20px); /* Adjust width based on the number of slides and margin */
-            margin-left: -100%; /* Start at the second slide for initial view */
+            margin-left: -99%; /* Start at the second slide for initial view */
         }
 
         .hero-slide { /* New class for individual slides */
@@ -2241,7 +2242,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Đẩy nội dung lên trên, giá và link xuống dưới */
+    justify-content: space-between;
 }
 
 .product-card:hover {

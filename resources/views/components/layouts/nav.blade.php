@@ -22,8 +22,10 @@
             <span class="line"></span>
         </div>
         <nav>
-            <ul class="nav-links">
-
+            <ul class="nav-links" style="margin-left:20%">
+                <li style="--d: 0.1s">
+                    <a href="{{route('home')}}">Trang Chủ </a>
+                </li>
                 <li style="--d: 0.1s">
                     <a href="{{route('product')}}">Sản Phẩm </a>
                 </li>
@@ -34,12 +36,7 @@
                     <a href="#about">Bài Viết</a>
                 </li>
 
-                <div class="search-container">
-                    <input type="text" name="search" placeholder="Search..." class="search-input">
-                    <a href="#" class="search-btn">
-                        <i class="fas fa-search fa-2x"></i>
-                    </a>
-                </div>
+
                 <li style="--d: 0.12s">
                     <a class="nav-link" href="giohang.html"><i class="fa" style="font-size:24px;color:black">&#xf07a;</i>
                         <span class='badge badge-warning' id='lblCartCount'> 5 </span>

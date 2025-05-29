@@ -1,5 +1,6 @@
 <div>
     <br> <br> <br>
+    <link rel="stylesheet" href="{{ asset('client/signin.css') }}">
     <div class="user-auth-wrapper">
         <div class="user-auth-card-layout">
             <div class="user-auth-form-panel">
@@ -40,17 +41,10 @@
                         Đăng Ký
                     </button>
 
-                    <div class="auth-section-divider">
-                        <span>Hoặc Tiếp Tục Với</span>
-                    </div>
+                  <br>
+                    <br>
+                    <br>
 
-                    <div class="auth-social-logins">
-                        <a href="#" class="social-login-button google-provider">
-                            <img src="https://c.animaapp.com/4fm4rMYc/img/icons8-google-1.svg" alt="Google icon">
-                            Đăng Ký Với Google
-                        </a>
-
-                    </div>
 
                     <p class="auth-signup-prompt">
                         Đã Có Tài Khoản? <a href="{{ route('login') }}" class="auth-signup-link">Đăng Nhập</a>
@@ -61,7 +55,7 @@
             <div class="user-auth-visual-panel"> </div>
 
         </div>
-        <link rel="stylesheet" href="{{ asset('client/signin.css') }}">
+
 
     </div>
     <br> <br> <br>

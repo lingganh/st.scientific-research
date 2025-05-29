@@ -5,6 +5,7 @@ use App\Livewire\Home;
 use App\Livewire\Products;
 use App\Livewire\Signup;
 use App\Livewire\Workshop;
+use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
 
 
@@ -14,7 +15,7 @@ Route::get('/', function () {
 
 Route::get('',Home::class)->name('home');
 Route::get('product',Products::class)->name('product');
-Route::get('workshop',Workshop::class)->name('workshop');
+Route::get('workshop',Workshops::class)->name('workshop');
 
 // Login
 //Google

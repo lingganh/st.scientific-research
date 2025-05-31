@@ -3,6 +3,7 @@
 
     @include('components.layouts.head')
 
+
 <body>
 @include('components.layouts.nav')
 
@@ -11,6 +12,7 @@
 </div>
 
 @include('components.layouts.footer')
+
 
 
 

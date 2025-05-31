@@ -23,6 +23,9 @@ Route::get('workshop',Workshops::class)->name('workshop');
 //Google
 Route::get('google/login',[Login::class,'redirectToGoogle'])->name('google.login');
 Route::get('auth/google/callback',[Login::class,'handleGoogleCallback'])->name('google.callback');
+Route::post('logout',[Login::class,'logout'])->name('logout');
+
+
 
 Route::get('login',Login::class)->name('login');
 Route::get('signup',Signup::class)->name('signup');

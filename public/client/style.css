@@ -2682,3 +2682,11 @@ body {
         text-align: center;
     }
 }
+
+ .fl-flasher.fl-container {
+    position: fixed;
+    margin-top: 70px;
+    width: 100%;
+    box-sizing: border-box;
+}
+

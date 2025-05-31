@@ -10,9 +10,11 @@ class UserProfile extends Component
     public function mount(){
 
     }
+
     public function render()
     {
         $user = Auth::user();
-        return view('livewire.user-profile')->extends('components.layouts.app')->section('content');
+        return view('livewire.user-profile', compact('user'))->extends('components.layouts.app')->section('content');
     }
+
 }

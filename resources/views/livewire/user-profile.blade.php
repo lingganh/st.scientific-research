@@ -7,7 +7,7 @@
             <div class="profile-search-bar" style="margin-left: 3%">
                 <input type="text"
 
-                       placeholder="Tìm kiếm trong hồ sơ..."
+                       placeholder="Tìm kiếm đơn hàng"
                        class="search-input">
                 <button class="search-button">
                     <i class="fas fa-search"></i>
@@ -35,7 +35,7 @@
                         </a>
                     </li>
                     <li>
-                        <form method="POST" action=" " class="sidebar-logout-form">
+                        <form method="POST" action="{{route('logout')}}" class="sidebar-logout-form">
                             @csrf
                             <button type="submit" class="sidebar-logout-button">
                                 <i class="fas fa-sign-out-alt"></i> Đăng xuất

@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Http\Request;
 use Livewire\Component;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
@@ -19,7 +20,7 @@ class Login extends Component
 
             $user = Socialite::driver('google')->user();
 
-            $finduser = User::where('google_id', $user->id)->first();
+            $finduser = User::where('email', $user->email)->first();
 
             if($finduser)
 
@@ -27,7 +28,7 @@ class Login extends Component
 
                 Auth::login($finduser);
 
-                return redirect()->intended('home');
+                return redirect()->intended('')->with('success', 'Đăng Nhập Thành Công ');
 
             }
 
@@ -37,18 +38,24 @@ class Login extends Component
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'google_id'=> $user->id,
+//                    'google_id' => $user->id,
                     'password' => encrypt('123456qQ')
                 ]);
 
                 Auth::login($newUser);
 
-                return redirect()->intended('home');
+                return redirect()->intended('')->with('success', 'Đăng Ký Thành Công ');
             }
 
         } catch (Exception $e) {
             dd($e->getMessage());
         }
+    }
+    public function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect()->route('home')->with('success', 'Đăng Xuất Thành Công ');
     }
     public function render()
     {

@@ -12,6 +12,9 @@ use Exception;
 
 class Login extends Component
 {
+    public $email;
+    public $password;
+
     public function redirectToGoogle(){
         return Socialite::driver('google')->redirect();
     }
@@ -56,6 +59,30 @@ class Login extends Component
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect()->route('home')->with('success', 'Đăng Xuất Thành Công ');
+    }
+    public function login( ){
+        $credentials = [
+            'email' => $this->email,
+            'password' => $this->password,
+        ];
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            // dd($user->email);
+            if($user->otp != null) {
+                // session(['otp_email' => $user->email]);
+
+                return redirect()->route('verify-otp')->with('warning', 'Tài khoản của bạn cần được xác thực. Vui lòng nhập mã OTP đã được gửi đến email của bạn.');
+            }
+            else{
+                Auth::login($user);
+                session(['user_id' => $user->id]);
+                return redirect()->route('home')->with('success', 'Đăng Nhập Thành  Công');
+            }
+
+        } else {
+            return redirect()->route('login')->with('error', 'Email hoặc mật khẩu không chính xác !');
+        }
     }
     public function render()
     {

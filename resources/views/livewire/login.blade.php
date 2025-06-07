@@ -5,29 +5,31 @@
                     <p>Hãy nhập đầy đủ thông tin để đăng nhập nhé !</p>
                 </div>
 
-                <form class="auth-form-submission">
+                <form class="auth-form-submission" wire:submit.prevent="login">
+                    @csrf
                     <div class="form-input-section">
                         <label for="auth_email_input">Email :</label>
-                        <input type="email" id="auth_email_input" name="email" placeholder="abc@example.com" required autocomplete="email">
+                        <input type="email" id="auth_email_input" name="email" placeholder="abc@example.com" required autocomplete="email" wire:model.defer="email">
+                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-input-section">
                         <label for="auth_password_input">Mật Khẩu :</label>
-                        <input type="password" id="auth_password_input" name="password" placeholder="Tối thiểu 8 ký tự " required autocomplete="current-password">
+                        <input type="password" id="auth_password_input" name="password" placeholder="Tối thiểu 8 ký tự " required autocomplete="current-password" wire:model.defer="password">
+                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
                         <a href="#" class="form-link-recovery">Quên Mật Khẩu ?</a>
                     </div>
 
-
-
                     <button type="submit" class="auth-action-button" style="  width: 100%;
-                             padding: 16px 25px;
-                             background-color: #2e4d1b;
-                             color: #fff;
-                             border-radius: 8px;
-                             font-size: 1.15em;
-                             font-weight: 600;
-                             letter-spacing: 0.7px;">
+                         padding: 16px 25px;
+                         background-color: #2e4d1b;
+                         color: #fff;
+                         border-radius: 8px;
+                         font-size: 1.15em;
+                         font-weight: 600;
+                         letter-spacing: 0.7px;">
                         Đăng Nhập </button>
+                </form>
 
                     <div class="auth-section-divider">
                         <span>Hoặc Tiếp Tục Với </span>
@@ -47,8 +49,7 @@
                     <p class="auth-signup-prompt">
                         Bạn Không Có Tài Khoản? <a href="{{route('signup')}}" class="auth-signup-link">Tạo Tài Khoản</a>
                     </p>
-                </form>
-            </div>
+                </form> </div>
 
             <div class="user-auth-visual-panel"> </div>
 

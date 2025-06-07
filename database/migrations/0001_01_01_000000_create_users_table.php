@@ -24,6 +24,8 @@ return new class extends Migration
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
             $table->text('bio')->nullable();
+            $table->integer('role')->nullable();
+            $table->integer('otp')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

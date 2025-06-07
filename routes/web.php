@@ -2,6 +2,7 @@
 
 use App\Livewire\Login;
 use App\Livewire\Home;
+use App\Livewire\ProductDetail;
 use App\Livewire\Products;
 use App\Livewire\Signup;
 use App\Livewire\UserProfile;
@@ -18,6 +19,8 @@ Route::get('/', function () {
 Route::get('',Home::class)->name('home');
 Route::get('product',Products::class)->name('product');
 Route::get('workshop',Workshops::class)->name('workshop');
+Route::get('/products/{productId}', ProductDetail::class)->name('product.detail');
+
 
 // Login
 //Google

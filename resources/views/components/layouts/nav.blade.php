@@ -51,7 +51,7 @@
                     <i class="fa-regular fa-circle-user fa-2x"></i>
 
 
-
+</a>
 
             @endif
 

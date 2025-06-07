@@ -48,7 +48,7 @@ class Products extends Component
             $products->orderBy('created_at', 'desc');
         }
 
-         $allProduct = $products->with('categories')->get();
+         $allProduct = $products->with('categories')->paginate(9);
 
         return view('livewire.products', [
             'allProduct' => $allProduct,

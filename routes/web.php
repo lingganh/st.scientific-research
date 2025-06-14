@@ -6,6 +6,7 @@ use App\Livewire\ProductDetail;
 use App\Livewire\Products;
 use App\Livewire\Signup;
 use App\Livewire\UserProfile;
+use App\Livewire\VerifyOtp;
 use App\Livewire\Workshop;
 use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,6 @@ Route::post('logout',[Login::class,'logout'])->name('logout');
 
 Route::get('login',Login::class)->name('login');
 Route::get('signup',Signup::class)->name('signup');
-
+Route::get('/verify-otp', VerifyOtp::class)->name('verify-otp');
 //user pro5
 Route::get('profile',UserProfile::class)->name('profile.user');

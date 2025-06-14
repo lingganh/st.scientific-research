@@ -1,0 +1,169 @@
+/* Basic CSS for product detail page - Bạn nên chuyển vào file CSS của bạn */
+.product-detail-page {
+    padding: 40px 20px;
+    background-color: #efefda;
+    min-height: 80vh;
+}
+
+.product-detail-container {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng trên màn hình nhỏ */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.product-image-section {
+    flex: 1; /* Chiếm 1 phần */
+    min-width: 300px; /* Chiều rộng tối thiểu */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f8f8;
+}
+
+.product-main-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px; /* Giới hạn chiều cao */
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.product-info-section {
+    flex: 2; /* Chiếm 2 phần */
+    min-width: 400px; /* Chiều rộng tối thiểu */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.product-category {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.category-name {
+    font-weight: 600;
+    color: #2e4d1b;
+}
+
+.product-price {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #2e4d1b; /* Màu xanh lá đặc trưng */
+    margin-bottom: 20px;
+}
+
+.price-value {
+    margin-left: 5px;
+}
+
+.product-description h3 {
+    font-size: 1.3em;
+    color: #444;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.product-description p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.product-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.add-to-cart-btn,
+.add-to-wishlist-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-to-cart-btn {
+    background-color: #2e4d1b; /* Màu xanh lá cây */
+    color: #fff;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #3a622a;
+    transform: translateY(-2px);
+}
+
+.add-to-wishlist-btn {
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+}
+
+.add-to-wishlist-btn:hover {
+    background-color: #e0e0e0;
+    color: #e74c3c; /* Màu đỏ cho icon trái tim */
+    transform: translateY(-2px);
+}
+
+.add-to-cart-btn i,
+.add-to-wishlist-btn i {
+    margin-right: 8px;
+}
+
+.no-product-found {
+    text-align: center;
+    font-size: 1.5em;
+    color: #888;
+    padding: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-detail-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-image-section,
+    .product-info-section {
+        min-width: unset; /* Xóa min-width để nó co giãn */
+        width: 100%; /* Chiếm toàn bộ chiều rộng */
+    }
+
+    .product-info-section {
+        padding: 20px;
+        text-align: center;
+    }
+
+    .product-actions {
+        justify-content: center; /* Căn giữa các nút hành động */
+        flex-direction: column; /* Xếp dọc các nút trên mobile */
+        gap: 10px;
+    }
+
+    .add-to-cart-btn, .add-to-wishlist-btn {
+        width: 100%; /* Cho nút chiếm hết chiều rộng */
+    }
+}

@@ -26,7 +26,7 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->integer('role')->nullable();
             $table->integer('otp')->nullable();
-
+            $table->timestamp('otp_expires_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

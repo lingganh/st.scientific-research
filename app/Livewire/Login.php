@@ -41,8 +41,7 @@ class Login extends Component
                 $newUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-//                    'google_id' => $user->id,
-                    'password' => encrypt('123456qQ')
+                     'password' => encrypt('123456qQ')
                 ]);
 
                 Auth::login($newUser);
@@ -61,18 +60,21 @@ class Login extends Component
         return redirect()->route('home')->with('success', 'Đăng Xuất Thành Công ');
     }
     public function login( ){
+//        $this->email = trim($this->email);
+//        $this->password = trim($this->password);
+//
+//        $this->validate();
         $credentials = [
             'email' => $this->email,
             'password' => $this->password,
         ];
-
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             // dd($user->email);
             if($user->otp != null) {
                 // session(['otp_email' => $user->email]);
 
-                return redirect()->route('verify-otp')->with('warning', 'Tài khoản của bạn cần được xác thực. Vui lòng nhập mã OTP đã được gửi đến email của bạn.');
+                return redirect()->route('verify-otp')->with('warning', 'Tài khoản của bạn cần được xác thực ');
             }
             else{
                 Auth::login($user);

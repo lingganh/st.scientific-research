@@ -1,6 +1,5 @@
 <div>
-    <br> <br> <br>
-    <link rel="stylesheet" href="{{ asset('client/signin.css') }}">
+     <link rel="stylesheet" href="{{ asset('client/signin.css') }}">
     <div class="user-auth-wrapper">
         <div class="user-auth-card-layout">
             <div class="user-auth-form-panel">
@@ -9,25 +8,46 @@
                     <p>Nhập thông tin của bạn để đăng ký.</p>
                 </div>
 
-                <form class="auth-form-submission">
+                 @if (session()->has('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if (session()->has('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+                @if (session()->has('warning'))
+                    <div class="alert alert-warning">
+                        {{ session('warning') }}
+                    </div>
+                @endif
+
+                 <form class="auth-form-submission" wire:submit.prevent="register">
+
                     <div class="form-input-section">
                         <label for="auth_name_input">Tên Đầy Đủ :</label>
-                        <input type="text" id="auth_name_input" name="full_name" placeholder="Ví dụ: Nguyễn Văn A" required autocomplete="name">
+                        <input type="text" id="auth_name_input" name="name" placeholder="Ví dụ: Nguyễn Văn A" required autocomplete="name" wire:model.defer="name">
+                        @error('name') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-input-section">
                         <label for="auth_email_input">Email :</label>
-                        <input type="email" id="auth_email_input" name="email" placeholder="abc@example.com" required autocomplete="email">
+                        <input type="email" id="auth_email_input" name="email" placeholder="abc@example.com" required autocomplete="email" wire:model.defer="email">
+                        @error('email') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-input-section">
                         <label for="auth_password_input">Mật Khẩu :</label>
-                        <input type="password" id="auth_password_input" name="password" placeholder="Tối thiểu 8 ký tự" required autocomplete="new-password">
+                        <input type="password" id="auth_password_input" name="password" placeholder="Tối thiểu 8 ký tự" required autocomplete="new-password" wire:model.defer="password">
+                        @error('password') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
                     <div class="form-input-section">
                         <label for="auth_confirm_password_input">Xác Nhận Mật Khẩu :</label>
-                        <input type="password" id="auth_confirm_password_input" name="password_confirmation" placeholder="Nhập lại mật khẩu" required autocomplete="new-password">
+                        <input type="password" id="auth_confirm_password_input" name="password_confirmation" placeholder="Nhập lại mật khẩu" required autocomplete="new-password" wire:model.defer="password_confirmation">
+                        @error('password_confirmation') <span class="text-danger">{{ $message }}</span> @enderror
                     </div>
 
                     <button type="submit" class="auth-action-button" style="  width: 100%;
@@ -40,23 +60,19 @@
                              letter-spacing: 0.7px;">
                         Đăng Ký
                     </button>
-
-                  <br>
-                    <br>
-                    <br>
-
-
-                    <p class="auth-signup-prompt">
-                        Đã Có Tài Khoản? <a href="{{ route('login') }}" class="auth-signup-link">Đăng Nhập</a>
-                    </p>
                 </form>
-            </div>
 
+                <br>
+                <br>
+                <br>
+
+                <p class="auth-signup-prompt">
+                    Đã Có Tài Khoản? <a href="{{ route('login') }}" class="auth-signup-link">Đăng Nhập</a>
+                </p>
+            </div>
             <div class="user-auth-visual-panel"> </div>
 
         </div>
 
-
     </div>
-    <br> <br> <br>
 </div>

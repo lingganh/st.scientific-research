@@ -1,4 +1,6 @@
 <div>
+    <link rel="stylesheet" href="{{ asset('client/userProfile.css') }}">
+
     <br><br>
     <div class="container">
         <div class="profile-layout">
@@ -90,8 +92,7 @@
     </div>
     <br><br>
 
-    {{-- Modal Sửa Thông Tin CÁ NHÂN (TỰ VIẾT CSS/JS) --}}
-    {{-- ĐẢM BẢO KHÔNG CÒN CLASS HAY THUỘC TÍNH NÀO CỦA BOOTSTRAP MODAL Ở ĐÂY --}}
+
     <div id="editProfileModal" class="custom-modal-backdrop" style="display: none;">
         <div class="custom-modal-content" wire:ignore.self>
             <div class="custom-modal-header">

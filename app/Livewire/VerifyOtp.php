@@ -57,16 +57,20 @@ use Illuminate\Support\Carbon;
 
         if (!$user) {
             session()->flash('error', 'Không tìm thấy tài khoản với email này.');
+            return false;
 
         }
 
         if ($user->otp !== (int)$this->otp) {
             session()->flash('error', 'Mã OTP không chính xác. Vui lòng kiểm tra lại.');
+            return false;
 
         }
 
         if (Carbon::parse($user->otp_expires_at)->isPast()) {
             session()->flash('error', 'Mã OTP đã hết hạn. Vui lòng yêu cầu gửi lại mã mới.');
+            return false;
+
         }
 
         $user->email_verified_at = now();

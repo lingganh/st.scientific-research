@@ -42,18 +42,10 @@
     <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); ">
         <div class="container about-section">
             <h2>Bài Viết </h2>
-            <div class="container features-section relative">
-                <div class="article-carousel">
-                    @foreach($posts as $post)
-                        <div class="article-card">
-                            <div class="content">
-                                <p class="date">{{$post->created_up}}</p>
-                                <p class="title">{{$post->title}}</p>
-                            </div>
-                            <img src="{{$post->image}} " alt="article-cover"/>
-                        </div>
-                    @endforeach
-                </div>
+            <div class="carousel"  mask>
+
+            </div>
+        </div>
     </section>
 
     <section id="features" class="relative">
@@ -208,28 +200,39 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
 
+
+    <script>
         $(document).ready(function () {
             $('.product-carousel').slick({
+                dots: false, // desktop
+                infinite: true,
+                speed: 500,
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 autoplay: true,
                 autoplaySpeed: 2000,
-            });
-
-            $('.article-carousel').slick({
-                slidesToShow: 5,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
+                responsive: [
+                    {
+                        breakpoint: 1024, // Tablet
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 768, // Mobile
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            dots: false,
+                            arrows:true
+                        }
+                    }
+                ]
             });
 
 
         });
-
-
     </script>
-
-
 </div>

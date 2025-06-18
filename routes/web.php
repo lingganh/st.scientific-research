@@ -10,7 +10,6 @@ use App\Livewire\VerifyOtp;
 use App\Livewire\Workshop;
 use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
-use Symfony\Component\HttpKernel\Profiler\Profile;
 
 
 Route::get('/', function () {
@@ -33,6 +32,6 @@ Route::post('logout',[Login::class,'logout'])->name('logout');
 
 Route::get('login',Login::class)->name('login');
 Route::get('signup',Signup::class)->name('signup');
-Route::get('/verify-otp', VerifyOtp::class)->name('verify-otp');
+Route::post('/verify-otp', VerifyOtp::class)->name('verify-otp');
 //user pro5
 Route::get('profile',UserProfile::class)->name('profile.user');

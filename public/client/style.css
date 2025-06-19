@@ -99,8 +99,7 @@ html {
 /****! Starting from Mobile Devices *****/
 body {
     background-color: var(--primary-bg);
-    color: var(--dark);
-    font-family: var(--ff-sans);
+     font-family: var(--ff-sans);
     overflow-x: hidden;
 }
 
@@ -141,6 +140,8 @@ nav {
     padding-inline: 1rem;
     width: var(--navbar-width);
     overflow: hidden;
+    overflow-y: auto;
+    z-index: 1000;
 }
 
 .nav-links {
@@ -434,12 +435,12 @@ footer {
     width: 24px;
     padding: 6px 3px;
     aspect-ratio: 1;
-    z-index: 2;
-    left: 1rem;
-    top: 50%;
-    transform: translate(0, -11px);
+     left: 1rem;
+    top: 14px;
+    transform: none;
     border-radius: 0.2rem;
     cursor: pointer;
+    z-index: 1001;
 }
 .menu .line {
     position: absolute;
@@ -2097,50 +2098,7 @@ html {
     z-index: 1000;
 }
 
-.dropdown-menu { /* Có thể là div.dropdown-menu hoặc ul.dropdown-menu tùy bạn dùng thẻ gì */
-    position: absolute;
-    top: calc(100% + 10px);
-    right: 0;
-    background-color: var(--light);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-width: 180px;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-    padding: 10px 0;
-    text-align: left;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
 
-.user-menu-item:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Các style cho dropdown-item và logout-button khác giữ nguyên */
-.dropdown-item {
-    display: block;
-    padding: 12px 20px;
-    color: var(--dark);
-    text-decoration: none;
-    font-size: 0.95em;
-    white-space: nowrap;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.dropdown-item:hover {
-    background-color: var(--primary-bg);
-    color: var(--accent);
-}
-
-.dropdown-item.logout-form {
-    margin: 0;
-    padding: 0;
-    display: block;
-}
 
 .logout-button {
     background: none;
@@ -2395,153 +2353,7 @@ html {
     border: none !important;
     color: #999;
 }
-/**/
-@layer base, demo;
-@import url(https://fonts.bunny.net/css?family=abel:400);
 
-@layer demo {
-    .carousel {
-        --items: 6;
-        --carousel-duration: 40s;
-        @media (width > 600px) {
-            --carousel-duration: 30s;
-        }
-        --carousel-width: min(
-            80vw,
-            1200px
-        ); /* note - it will "break" if it gets too wide and there aren't enough items */
-        --carousel-item-width: 280px;
-        --carousel-item-height: 450px;
-        --carousel-item-gap: 2rem;
-
-        --clr-cta: rgb(0, 132, 209);
-
-        position: relative;
-        width: var(--carousel-width);
-        height: var(--carousel-item-height);
-        overflow: clip;
-
-        &[mask] {
-            /* fade out on sides */
-            mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 10% 90%,
-                transparent
-            );
-        }
-
-        &[reverse] > article {
-            animation-direction: reverse;
-        }
-        /* hover pauses animation */
-        &:hover > article {
-            animation-play-state: paused;
-        }
-    }
-    .carousel > article {
-        position: absolute;
-        top: 0;
-        left: calc(100% + var(--carousel-item-gap));
-        width: var(--carousel-item-width);
-        height: var(--carousel-item-height);
-        display: grid;
-        grid-template-rows: 200px auto 1fr auto;
-        gap: 0.25rem;
-        border: 1px solid light-dark(rgba(0 0 0 / 0.25), rgba(255 255 255 / 0.15));
-
-        padding-block-end: 1rem;
-        border-radius: 10px;
-        background: light-dark(white, rgba(255 255 255 / 0.05));
-        color: light-dark(rgb(49, 65, 88), white);
-
-        /* animation */
-        will-change: transform;
-        animation-name: marquee;
-        animation-duration: var(--carousel-duration);
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-delay: calc(
-            var(--carousel-duration) / var(--items) * 1 * var(--i) * -1
-        );
-        &:nth-child(1) {
-            --i: 0;
-        }
-        &:nth-child(2) {
-            --i: 1;
-        }
-        &:nth-child(3) {
-            --i: 2;
-        }
-        &:nth-child(4) {
-            --i: 3;
-        }
-        &:nth-child(5) {
-            --i: 4;
-        }
-        &:nth-child(6) {
-            --i: 5;
-        }
-        &:nth-child(7) {
-            --i: 6;
-        }
-        &:nth-child(8) {
-            --i: 7;
-        }
-    }
-    .carousel img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-
-        border-radius: 10px 10px 0 0;
-    }
-    .carousel > article > *:not(img) {
-        padding: 0 1rem;
-    }
-    .carousel > article > div {
-        grid-row: span 2;
-        display: grid;
-        grid-template-rows: subgrid;
-        font-size: 0.8rem;
-    }
-    .carousel > article h2 {
-        font-size: 1.2rem;
-        font-weight: 300;
-        padding-block: 0.75rem 0.25rem;
-        margin: 0;
-    }
-    .carousel > article p {
-        margin: 0;
-    }
-    .carousel > article a {
-        text-decoration: none;
-        text-transform: lowercase;
-        border: 1px solid var(--clr-cta);
-        color: light-dark(var(--clr-cta), white);
-        border-radius: 3px;
-        padding: 0.25rem 0.5rem;
-        place-self: start;
-        transition: 150ms ease-in-out;
-        &:hover,
-        &:focus-visible {
-            background-color: var(--clr-cta);
-            color: white;
-            outline: none;
-        }
-    }
-
-    @keyframes marquee {
-        100% {
-            transform: translateX(
-                calc(
-                    (var(--items) * (var(--carousel-item-width) + var(--carousel-item-gap))) *
-                    -1
-                )
-            );
-        }
-    }
-}
 
 /**************************************************/
 /**************** MEDIA QUERIES *******************/
@@ -3372,5 +3184,138 @@ html {
 @media (width > 600px) {
     .carousel {
         --carousel-duration: 30s;
+    }
+}
+
+
+
+
+/* =================================
+   TABLET & MOBILE (Điểm gãy 992px)
+==================================== */
+@media (max-width: 992px) {
+     .menu {
+        display: block;
+    }
+
+    .header-section .logo {
+        margin: auto;
+    }
+
+     nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        background: var(--dark);
+        padding: 1rem;
+        width: var(--navbar-width);
+        overflow-y: auto;
+        transform: translateX(-110%);
+        z-index: 1000;
+        transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    }
+
+    nav.active {
+        transform: translateX(0);
+    }
+
+     .nav-links {
+        margin-top: 4rem;
+        flex-direction: column;
+        align-items: flex-start;
+        color: var(--light);
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        width: 100%;
+        transform: translateX(-110%);
+        transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+        transition-delay: var(--d);
+    }
+
+    nav.active .nav-links li {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        padding: 0.85em 0;
+    }
+
+     .nav-links li::after {
+        background-color: rgb(255 255 255 / 50%);
+        height: 1px;
+        left: 0;
+        transform: translateX(0);
+    }
+
+    .nav-links li:is(.active, :hover)::after {
+        width: 100%;
+    }
+
+     .btns {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 2rem;
+        transform: translateX(-110%);
+        transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+        transition-delay: var(--d);
+    }
+
+    nav.active .btns {
+        transform: translateX(0);
+    }
+
+    .btns > * {
+        color: var(--light);
+        width: 100%;
+        text-align: center;
+    }
+    .sign-up {
+        color: var(--light);
+    }
+    .btns > *:hover {
+        background: var(--primary-200);
+        color: var(--dark);
+    }
+}
+.nav-links .cart-text,
+.nav-links .user-text {
+    display: none;
+}
+
+.nav-links .cart-icon,
+.nav-links .user-icon {
+    display: inline-block;
+    font-size: 24px;
+    color: black;
+}
+/*Ẩn chữ */
+ @media (max-width: 992px) {
+
+     nav .nav-links .cart-icon,
+    nav .nav-links .user-icon {
+        display: none;
+    }
+
+    nav .nav-links .cart-text,
+    nav .nav-links .user-text {
+        display: inline-block;
+    }
+
+     nav .nav-links a.nav-link {
+        display: block;
+        padding: 0.85em 0;
+        font-size: 0.938rem;
+        color: inherit;
+    }
+
+     nav .nav-links .badge {
+        vertical-align: super;
+        font-size: 0.7em;
+        margin-left: 5px;
     }
 }

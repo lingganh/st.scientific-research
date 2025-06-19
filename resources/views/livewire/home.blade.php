@@ -42,10 +42,30 @@
     <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); ">
         <div class="container about-section">
             <h2>Bài Viết </h2>
-            <div class="carousel"  mask>
+            <br>
+            <div class="marquee-carousel" mask>
+                @foreach($posts as $post)
 
-            </div>
+                <article class="marquee-card">
+                    <img
+                        class="marquee-card__background"
+                        src="{{$post->image}}"
+                        alt="The Cross"
+                        width="1920"
+                        height="2193"
+                    />
+                    <div class="marquee-card__content | marquee-card-flow">
+                        <div class="marquee-card__content-container | marquee-card-flow">
+                            <h2 class="marquee-card__title">{{ Str::limit($post->title, 32, '...') }}</h2>
+
+
+                        </div>
+                        <button class="marquee-card__button">Xem Thêm</button>
+                    </div>
+                </article>
+                @endforeach
         </div>
+
     </section>
 
     <section id="features" class="relative">

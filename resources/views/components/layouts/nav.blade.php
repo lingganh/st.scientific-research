@@ -38,23 +38,19 @@
 
 
                 <li style="--d: 0.12s">
-                    <a class="nav-link" href="giohang.html"><i class="fa" style="font-size:24px;color:black">&#xf07a;</i>
-                        <span class='badge badge-warning' id='lblCartCount'> 5 </span>
+                    <a class="nav-link" href="giohang.html">
+                        <i class="fa fa-shopping-cart cart-icon"></i>  <span class="cart-text">Giỏ hàng</span>       <span class='badge badge-warning' id='lblCartCount'> 5 </span>
                     </a>
+                </li>
+                    @if (!Auth::check())
+                        <a class="nav-link" href="{{ route('login') }}">
+                            <i class="fa-regular fa-circle-user fa-2x user-icon"></i> <span class="user-text">Tài khoản</span>                  </a>
+                    @else
+                        <a class="nav-link user-icon-toggle" href="{{route('profile.user')}}">
+                            <i class="fa-regular fa-circle-user fa-2x user-icon"></i> <span class="user-text">Tài khoản</span>                  </a>
+                @endif
 
             </ul>
-            @if (!Auth::check())
-                <a class="nav-link" href="{{ route('login') }}"><i class="fa-regular fa-circle-user fa-2x"></i></a>
-            @else
-
-                <a class="nav-link user-icon-toggle" href="{{route('profile.user')}}">
-                    <i class="fa-regular fa-circle-user fa-2x"></i>
-
-
-</a>
-
-            @endif
-
         </nav>
     </div>
 </header>

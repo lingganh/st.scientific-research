@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('client/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('client/carousel.css') }}">
+
     <title>ST Scientific Research    </title>
     <script
         defer

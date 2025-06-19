@@ -7,7 +7,6 @@ use App\Livewire\Products;
 use App\Livewire\Signup;
 use App\Livewire\UserProfile;
 use App\Livewire\VerifyOtp;
-use App\Livewire\Workshop;
 use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
 

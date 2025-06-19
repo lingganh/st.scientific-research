@@ -64,8 +64,9 @@
                     </div>
                 </article>
                 @endforeach
-        </div>
 
+        </div>
+        </div>
     </section>
 
     <section id="features" class="relative">

@@ -10,9 +10,8 @@
 
 .marquee-carousel {
     --items: 6;
-    --carousel-duration: 40s;
-    /*--carousel-width: min(90vw, 1200px);*/
-    --carousel-item-width: 200px;
+    --carousel-duration: 80s;
+     --carousel-item-width: 200px;
     --carousel-item-height: 300px;
     --carousel-item-gap: 2rem;
     position: relative;
@@ -153,5 +152,69 @@
     .marquee-card:hover .marquee-card__button {
         opacity: 1;
         transition-delay: 500ms;
+    }
+}
+/* --- CODE RESPONSIVE CHO ĐIỆN THOẠI --- */
+@media (min-width: 600px) {
+    .marquee-container {
+        --card-width: 45vw;
+    }
+    .marquee-card__title{
+        font-size: 1.2rem;
+
+    }
+
+}
+
+@media (min-width: 768px) {
+    .marquee-container {
+        --gap: 1.5rem;
+        --card-width: 30vw;
+    }
+    .marquee-card__title {
+        font-size: 1.2rem;
+    }
+    .marquee-card__button {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .marquee-container {
+        --card-width: 220px;
+        --card-height: 330px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .marquee-container {
+        --gap: 2rem;
+        --card-width: 260px;
+        --card-height: 390px;
+        max-width: 1200px;
+        margin-inline: auto;
+    }
+    .marquee-card__title {
+        font-size: 1.3rem;
+    }
+    .marquee-card__button {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .marquee-container {
+        max-width: 1380px;
+        --card-width: 280px;
+        --card-height: 420px;
+    }
+}
+
+@media (any-hover: hover) and (any-pointer: fine) {
+    .marquee-card:hover .marquee-card__background {
+        transform: scale(1.1);
+    }
+    .marquee-card:hover {
+        transform: translateY(-5px);
     }
 }

@@ -11,13 +11,15 @@
 .marquee-carousel {
     --items: 6;
     --carousel-duration: 80s;
-     --carousel-item-width: 200px;
+    --carousel-item-width: 200px;
     --carousel-item-height: 300px;
     --carousel-item-gap: 2rem;
     position: relative;
-    width: var(--carousel-width);
     height: var(--carousel-item-height);
     overflow: clip;
+    width: 100%;
+    max-width: 1050px;
+    margin-inline: auto;
 }
 
 .marquee-carousel:hover > .marquee-card {
@@ -58,6 +60,7 @@
     overflow: hidden;
     border-radius: 0.625rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+    transition: transform 300ms ease-in-out;
 }
 
 .marquee-card > * {
@@ -97,9 +100,7 @@
     color: var(--white);
     line-height: 1.2;
     margin: 0;
-    /*ẩn chữ*/
     overflow-wrap: break-word;
-
 }
 
 .marquee-card__title::after {
@@ -110,7 +111,6 @@
     bottom: -0.3rem;
     left: 0;
     background-color: var(--brand-color);
-    /* TRẠNG THÁI ẨN BAN ĐẦU CỦA THANH VÀNG */
     opacity: 0;
     transform: scaleX(0);
     transition: opacity 500ms ease-in, transform 500ms ease-in;
@@ -127,94 +127,74 @@
     color: var(--black);
     text-decoration: none;
     text-align: center;
-    /* TRẠNG THÁI ẨN BAN ĐẦU CỦA NÚT */
     opacity: 0;
     transition: opacity 500ms ease-out;
 }
 
 /* HIỆU ỨNG KHI DI CHUỘT VÀO */
 @media (any-hover: hover) and (any-pointer: fine) {
+    .marquee-card:hover {
+        transform: translateY(-5px);
+    }
     .marquee-card:hover .marquee-card__content {
         transform: translateY(0);
     }
-
     .marquee-card:hover .marquee-card__background {
         transform: scale(1.05);
     }
-
     .marquee-card:hover .marquee-card__title::after {
         opacity: 1;
         transform: scaleX(1);
         transform-origin: left;
         transition-delay: 300ms;
     }
-
     .marquee-card:hover .marquee-card__button {
         opacity: 1;
         transition-delay: 500ms;
     }
 }
-/* --- CODE RESPONSIVE CHO ĐIỆN THOẠI --- */
-@media (min-width: 600px) {
-    .marquee-container {
-        --card-width: 45vw;
-    }
-    .marquee-card__title{
-        font-size: 1.2rem;
 
-    }
 
-}
+/* --- CODE RESPONSIVE CHO CÁC MÀN HÌNH --- */
 
-@media (min-width: 768px) {
-    .marquee-container {
-        --gap: 1.5rem;
-        --card-width: 30vw;
+/* Máy tính bảng và màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+    .marquee-carousel {
+        --carousel-item-width: 220px;
+        --carousel-item-height: 330px;
     }
     .marquee-card__title {
         font-size: 1.2rem;
     }
-    .marquee-card__button {
-        font-size: 0.9rem;
-    }
 }
 
-@media (min-width: 992px) {
-    .marquee-container {
-        --card-width: 220px;
-        --card-height: 330px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .marquee-container {
-        --gap: 2rem;
-        --card-width: 260px;
-        --card-height: 390px;
-        max-width: 1200px;
-        margin-inline: auto;
+/* Điện thoại màn hình ngang và máy tính bảng nhỏ */
+@media (max-width: 768px) {
+    .marquee-carousel {
+        --carousel-item-width: 180px;
+        --carousel-item-height: 270px;
+        --carousel-item-gap: 1.5rem;
     }
     .marquee-card__title {
-        font-size: 1.3rem;
-    }
-    .marquee-card__button {
         font-size: 1rem;
     }
-}
-
-@media (min-width: 1400px) {
-    .marquee-container {
-        max-width: 1380px;
-        --card-width: 280px;
-        --card-height: 420px;
+    .marquee-card__button {
+        font-size: 0.8rem;
+        padding: 0.4em 0.8em;
     }
 }
 
-@media (any-hover: hover) and (any-pointer: fine) {
-    .marquee-card:hover .marquee-card__background {
-        transform: scale(1.1);
+/* Điện thoại di động */
+@media (max-width: 480px) {
+    .marquee-carousel {
+        --carousel-item-width: 150px;
+        --carousel-item-height: 225px;
+        --carousel-item-gap: 1rem;
     }
-    .marquee-card:hover {
-        transform: translateY(-5px);
+    .marquee-card__title {
+        font-size: 0.9rem;
+    }
+    .marquee-card__content {
+        transform: translateY(55%);
     }
 }

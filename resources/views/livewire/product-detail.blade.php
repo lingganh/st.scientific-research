@@ -50,11 +50,12 @@
                                     <input type="text" id="pdp-quantity-input" value="1" readonly>
                                     <button class="pdp-quantity-selector__btn" data-action="plus">+</button>
                                 </div>
-                                <button class="pdp-btn pdp-btn--add-to-cart"><i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Thêm vào giỏ</button>
 
                                 <button id="pdp-wishlist-btn" class="pdp-btn pdp-btn--wishlist" aria-label="Yêu thích">
                                     <i class="far fa-heart"></i>
                                 </button>
+
+                                <button class="pdp-btn pdp-btn--add-to-cart"><i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Thêm vào giỏ</button>
                             </div>
                             <button class="pdp-btn pdp-btn--buy-now">Mua ngay</button>
                         </div>

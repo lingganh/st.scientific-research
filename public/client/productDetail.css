@@ -15,7 +15,7 @@
 
 .pdp-wrapper {
     font-family: var(--pdp-font-family);
-    background-color: var(--pdp-c-bg);
+    /*background-color: var(--pdp-c-bg);*/
     color: var(--pdp-c-text);
     padding: 2rem 0;
 }
@@ -68,7 +68,7 @@
 .pdp-summary-bars { flex-grow: 1; display: flex; flex-direction: column; gap: 0.75rem; }
 .pdp-rating-bar-row { display: flex; align-items: center; gap: 1rem; }
 .pdp-rating-bar-row .pdp-label { font-size: 0.9rem; font-weight: 600; color: var(--pdp-c-text-muted); width: 50px; }
-.pdp-progress-bg { flex-grow: 1; height: 10px; background-color: #e5e7eb; border-radius: 5px; overflow: hidden; }
+.pdp-progress-bg { flex-grow: 1; height: 10px;  border-radius: 5px; overflow: hidden; }
 .pdp-progress-fg { height: 100%; background-color: var(--pdp-c-yellow); border-radius: 5px; }
 .pdp-rating-bar-row .pdp-count { font-size: 0.9rem; font-weight: 600; color: var(--pdp-c-text-muted); width: 30px; text-align: right; }
 .pdp-reviews-list-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--pdp-c-border); }
@@ -96,4 +96,50 @@
     /* Màu hồng xinh xắn đây ạ */
     color: #ec4899;
     border-color: #ec4899;
+}
+@media (max-width: 900px) {
+    .pdp-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .pdp-reviews-summary {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdp-wrapper {
+        padding: 1rem 0;
+    }
+
+    .pdp-container {
+        padding: 0 1rem;
+    }
+
+    .pdp-card,
+    .pdp-customer-reviews,
+    .pdp-accordion-item {
+        padding: 1.5rem;
+    }
+
+    .pdp-info__title {
+        font-size: 1.75rem;
+    }
+
+    .pdp-info__price {
+        font-size: 1.5rem;
+    }
+
+     .pdp-main-actions {
+        flex-wrap: wrap;
+    }
+
+
+     .pdp-main-actions .pdp-btn--add-to-cart {
+        flex-basis: 80%;
+        margin-top: 1rem;
+    }
 }

@@ -43,7 +43,9 @@
         <div class="container about-section">
             <h2>Bài Viết </h2>
             <br>
-            <div class="marquee-carousel" mask>
+            <div class="marquee-container">
+
+            <div class="marquee-carousel" >
                 @foreach($posts as $post)
 
                 <article class="marquee-card">
@@ -64,7 +66,7 @@
                     </div>
                 </article>
                 @endforeach
-
+            </div>
         </div>
         </div>
     </section>

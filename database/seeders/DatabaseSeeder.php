@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\ProductImage;
+use App\Models\Review;
+use App\Models\Wishlist;
 use Illuminate\Database\Seeder;
 use App\Models\Author;
 use App\Models\Category;
@@ -228,5 +231,88 @@ class DatabaseSeeder extends Seeder
         Feedback::create(['name' => 'Lê Thị Hồng', 'message' => 'Tôi rất thích các bài viết về công nghệ mới trong nông nghiệp.']);
         Feedback::create(['name' => 'Trần Văn Nam', 'message' => 'Mong muốn có thêm nhiều hội thảo về kỹ thuật canh tác tiên tiến.']);
         Feedback::create(['name' => 'Nguyễn Hoàng Anh', 'message' => 'Website cung cấp thông tin rất đầy đủ và hữu ích cho sinh viên và người làm nông nghiệp.']);
-    }
+        // 1. Seed Product Images (Thư viện ảnh sản phẩm)
+        $this->command->info('Seeding Product Images with variety...');
+        $products = Product::all();
+
+        // Tạo một "bể" ảnh lớn hơn với các chủ đề xanh lá, be, vàng, tự nhiên
+        $imagePool = [
+            'https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg',
+            'https://images.pexels.com/photos/4207892/pexels-photo-4207892.jpeg',
+            'https://images.pexels.com/photos/4033148/pexels-photo-4033148.jpeg',
+            'https://images.pexels.com/photos/6625032/pexels-photo-6625032.jpeg',
+            'https://images.pexels.com/photos/133459/pexels-photo-133459.jpeg',
+            'https://images.pexels.com/photos/159844/cellular-phone-mobile-phone-notebook-macbook-159844.jpeg',
+            'https://images.pexels.com/photos/930004/pexels-photo-930004.jpeg',
+            'https://images.pexels.com/photos/4210866/pexels-photo-4210866.jpeg',
+            'https://images.pexels.com/photos/450597/pexels-photo-450597.jpeg',
+            'https://images.pexels.com/photos/276583/pexels-photo-276583.jpeg',
+            'https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg',
+            'https://images.pexels.com/photos/3932930/pexels-photo-3932930.jpeg',
+            'https://images.pexels.com/photos/5717413/pexels-photo-5717413.jpeg',
+            'https://images.pexels.com/photos/4112028/pexels-photo-4112028.jpeg',
+            'https://images.pexels.com/photos/4393433/pexels-photo-4393433.jpeg'
+        ];
+
+        foreach ($products as $product) {
+            // Lấy ngẫu nhiên từ 2 đến 4 ảnh cho mỗi sản phẩm
+            $numberOfImages = rand(2, 4);
+            $randomImageKeys = array_rand($imagePool, $numberOfImages);
+
+            // Đảm bảo $randomImageKeys luôn là một mảng
+            if (!is_array($randomImageKeys)) {
+                $randomImageKeys = [$randomImageKeys];
+            }
+
+            foreach ($randomImageKeys as $key) {
+                ProductImage::create([
+                    'product_id' => $product->id,
+                    'image_path' => $imagePool[$key]
+                ]);
+            }
+        }
+
+
+        // 2. Seed Reviews (Đánh giá sản phẩm) - Giữ nguyên
+        $this->command->info('Seeding Reviews...');
+        $users = User::all();
+        $comments = [
+            'Sản phẩm tuyệt vời, chất lượng rất tốt, tôi rất hài lòng!',
+            'Giao hàng nhanh, đóng gói cẩn thận. Sản phẩm đúng như mô tả.',
+            'Chất lượng sản phẩm ổn trong tầm giá. Sẽ tiếp tục ủng hộ.',
+            'Rất đáng tiền, sản phẩm này đã giúp ích cho tôi rất nhiều.',
+            'Mới dùng thử nhưng cảm thấy khá tốt. Hy vọng sẽ bền.'
+        ];
+
+        foreach ($products as $product) {
+            $reviewCount = rand(2, 5);
+            for ($i = 0; $i < $reviewCount; $i++) {
+                Review::create([
+                    'product_id' => $product->id,
+                    'user_id' => $users->random()->id,
+                    'rating' => rand(4, 5),
+                    'comment' => $comments[array_rand($comments)]
+                ]);
+            }
+        }
+
+
+        // 3. Seed Wishlists (Sản phẩm yêu thích) - Giữ nguyên
+        $this->command->info('Seeding Wishlists...');
+        $wishlisted = [];
+
+        for ($i = 0; $i < 10; $i++) {
+            $userId = $users->random()->id;
+            $productId = $products->random()->id;
+            $key = $userId . '-' . $productId;
+
+            if (!in_array($key, $wishlisted)) {
+                Wishlist::create([
+                    'user_id' => $userId,
+                    'product_id' => $productId,
+                ]);
+                $wishlisted[] = $key;
+            }
+        }
+     }
 }

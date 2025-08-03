@@ -74,4 +74,21 @@
             </div>
         </div>
     </section>
+
+         <script>
+             document.addEventListener('livewire:init', () => {
+
+            let perPage = 9;
+
+            if (window.innerWidth < 992) {
+            perPage = 6;
+        } else if (window.innerWidth < 1463) {
+            perPage = 8;
+        }
+
+            console.log('check', perPage);
+
+             Livewire.dispatch('per-page-updated', { perPage: perPage });
+        });
+    </script>
 </div>

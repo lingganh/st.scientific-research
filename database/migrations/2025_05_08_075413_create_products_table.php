@@ -12,15 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id(); // Trường id tự tăng
-            $table->string('name'); // Trường tên sản phẩm (varchar)
-            $table->string('img')->nullable(); // Trường đường dẫn ảnh (varchar), có thể null
-            $table->string('demo')->nullable(); // Trường demo (varchar), có thể null
-            $table->string('link')->nullable(); // Trường link (varchar), có thể null
-            $table->unsignedBigInteger('idTG')->nullable(); // Khóa ngoại liên kết với bảng tác giả (unsigned big integer), có thể null
-            $table->unsignedBigInteger('idDM')->nullable(); // Khóa ngoại liên kết với bảng danh mục (unsigned big integer), có thể null
-            $table->text('moTa')->nullable(); // Trường mô tả sản phẩm (text), có thể null
-            $table->timestamps(); // Tạo cột created_at và updated_at
+            $table->id();
+            $table->string('name');
+            $table->string('img')->nullable();
+            $table->string('demo')->nullable();
+            $table->string('link')->nullable();
+            $table->unsignedBigInteger('idTG')->nullable();
+            $table->unsignedBigInteger('idDM')->nullable();
+            $table->text('moTa')->nullable();
+            $table->text('contact_info')->nullable();
+            $table->timestamps();
+            $table->double('old_price')->nullable();
             $table->double('price')->nullable();
             $table->integer('count')->nullable();
             $table->integer('luotBan')->nullable();

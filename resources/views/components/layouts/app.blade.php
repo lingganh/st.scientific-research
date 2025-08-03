@@ -26,6 +26,7 @@
 
 @include('components.layouts.footer')
 
+@livewireScripts
 
 
 

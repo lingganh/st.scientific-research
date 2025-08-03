@@ -28,7 +28,7 @@ class Home extends Component
         $this->awards = Award::with('product')->get();
         $this->product = Product::find('product_id');
         $this->category = Category::all();
-        $this->allProduct = Product::with('categories')->take(6)->get();
+        $this->allProduct = Product::with('categories')->inRandomOrder()->limit(6)->get();
         $this->categories= Category::find('idDM');
     }
     public function render()

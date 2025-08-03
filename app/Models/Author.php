@@ -15,8 +15,8 @@ class Author extends Model
     /**
      * Lấy tất cả các sản phẩm của tác giả này.
      */
-    public function products(): HasMany
+    public function products()
     {
-        return $this->hasMany(Product::class, 'idTG');
+        return $this->belongsToMany(Product::class, 'author_product');
     }
 }

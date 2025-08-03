@@ -11,7 +11,7 @@
             <img src="https://vitc.edu.vn/Frond_end/images/logo_vnua-1.png" alt="VNUA Logo" class="vnua-logo">
 
             <div class="logo-text">
-                <a href="{{route('home')}}">Scientific Research</a>
+                <a href="{{route('home')}}">ST Scientific Research</a>
                 <span class="logo-subtext">Vietnam National University of Agriculture</span>
             </div>
 

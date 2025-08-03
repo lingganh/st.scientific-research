@@ -1,5 +1,4 @@
-/* reset all */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Raleway:wght@400;600;700&display=swap');* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +7,8 @@
 :root {
     --dark: #212220;
     --light: #f9fef2;
-
+    --accent: #3F4739;
+    --secondary: #A3B18A;
     --gradient-text: linear-gradient(to bottom left, var(--accent), var(--secondary));
 
     --primary-bg: #ecf2e4;
@@ -18,7 +18,7 @@
     --accent: #3F4739;
     --text-muted: #56554e;
 
-    --ff-sans: "Raleway", sans-serif;
+    --ff-sans: 'Manrope', 'Raleway', sans-serif;
     --spacing--24: 1.5rem;
     --navbar-width: 200px;
 }
@@ -2664,6 +2664,7 @@ html {
     .hero-text {
         font-size: clamp(1rem, 3vw, 1.2rem);
         margin-left: 8%;
+        text-align: justify;
     }
 
     .hero-subText {

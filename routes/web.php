@@ -5,6 +5,7 @@ use App\Livewire\Home;
 use App\Livewire\ProductDetail;
 use App\Livewire\Products;
 use App\Livewire\Signup;
+use App\Livewire\TestPagination;
 use App\Livewire\UserProfile;
 use App\Livewire\VerifyOtp;
 use App\Livewire\Workshops;
@@ -34,3 +35,4 @@ Route::get('signup',Signup::class)->name('signup');
 Route::post('/verify-otp', VerifyOtp::class)->name('verify-otp');
 //user pro5
 Route::get('profile',UserProfile::class)->name('profile.user');
+Route::get('/test-livewire', TestPagination::class);

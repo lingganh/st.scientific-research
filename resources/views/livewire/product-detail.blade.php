@@ -16,11 +16,13 @@
                             <img id="pdp-main-product-image" src="{{ $product->img ?? asset('path/to/default-image.jpg') }}" alt="{{ $product->name ?? 'Sản phẩm chính' }}">
                         </div>
                         <div class="pdp-gallery__thumbnails">
+
                             <img class="pdp-gallery__thumbnail-img active" src="{{ $product->img ?? asset('path/to/default-image.jpg') }}" alt="{{ $product->name }}">
-                            <img class="pdp-gallery__thumbnail-img" src="https://images.pexels.com/photos/7974/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Thumbnail 2">
-                            <img class="pdp-gallery__thumbnail-img" src="https://images.pexels.com/photos/341523/pexels-photo-341523.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Thumbnail 3">
-                            <img class="pdp-gallery__thumbnail-img" src="https://images.pexels.com/photos/6625032/pexels-photo-6625032.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Thumbnail 4">
-                        </div>
+                            @foreach ($product->images as $img)
+                                <img class="pdp-gallery__thumbnail-img " src="{{ $img->image_path }}" alt="{{ $product->name }}">
+
+                            @endforeach
+                         </div>
                     </section>
 
                     <section class="pdp-info">
@@ -39,9 +41,9 @@
                             @endif
                         </div>
 
-                        <p class="pdp-info__description">
-                            {{ $product->short_description ?? 'Sản phẩm chưa có mô tả ngắn. Trải nghiệm hiệu năng đỉnh cao và thiết kế sang trọng.' }}
-                        </p>
+{{--                        <p class="pdp-info__description">--}}
+{{--                            {{ $product->short_description ?? 'Sản phẩm chưa có mô tả ngắn. Trải nghiệm hiệu năng đỉnh cao và thiết kế sang trọng.' }}--}}
+{{--                        </p>--}}
 
                         <div class="pdp-action-group">
                             <div class="pdp-main-actions">
@@ -69,24 +71,24 @@
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="pdp-accordion-content">
-                            {!! $product->description ?? 'Sản phẩm hiện chưa có mô tả chi tiết.' !!}
+                            {!! $product->moTa ?? 'Sản phẩm hiện chưa có mô tả chi tiết.' !!}
                         </div>
                     </div>
 
                     <div class="pdp-accordion-item">
                         <div class="pdp-accordion-header">
-                            <span>Thông số kỹ thuật</span>
+                            <span>Tác Giả </span>
                             <i class="fas fa-chevron-down"></i>
                         </div>
                         <div class="pdp-accordion-content">
-                            @if ($product->specs ?? false)
+                            @if ($product->author_product )
                                 <ul>
-                                    @foreach($product->specs as $spec)
-                                        <li><strong>{{ $spec['name'] }}:</strong> {{ $spec['value'] }}</li>
-                                    @endforeach
+                                    @foreach($product->author_product as $authors)
+                                        {{$authors->name}}
+                                     @endforeach
                                 </ul>
                             @else
-                                <p>Chưa có thông số kỹ thuật chi tiết cho sản phẩm này.</p>
+                                <p>Chưa có thông tin tác giả cho sản phẩm này.</p>
                             @endif
                         </div>
                     </div>
@@ -187,7 +189,7 @@
                     });
                 }
 
-                // --- Xử lý Nút Yêu thích (Tim) ---
+                // --- Xử lý Nút Yêu thích ---
                 const wishlistBtn = wrapper.querySelector('#pdp-wishlist-btn');
                 if (wishlistBtn) {
                     const heartIcon = wishlistBtn.querySelector('i');
@@ -205,5 +207,6 @@
                 }
             });
         </script>
+
     </div>
 </div>

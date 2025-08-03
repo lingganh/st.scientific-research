@@ -12,13 +12,21 @@ class Product extends Model
 
     protected $fillable = ['name', 'img', 'demo', 'link', 'idTG', 'idDM', 'moTa'];
 
-    public function author(): BelongsTo
+    public function authors()
     {
-        return $this->belongsTo(Author::class, 'idTG');
+        return $this->belongsToMany(Author::class, 'author_product');
     }
 
     public function categories()
     {
         return $this->belongsTo(Category::class, 'idDM');
+    }
+    public function images()
+    {
+        return $this->hasMany(ProductImage::class, 'product_id');
+    }
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'product_id');
     }
 }

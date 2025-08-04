@@ -5,24 +5,25 @@ namespace App\Livewire;
 use Livewire\Component;
 use App\Models\Product;
 use App\Models\Category;
+use Livewire\WithoutUrlPagination;
 use Livewire\WithPagination;
 use Livewire\Attributes\On;
 class Products extends Component
 {
-    use WithPagination;
-     public $search = '';
+    use WithPagination, WithoutUrlPagination;
+    public $search = '';
     public $selectedCategory = '';
 //    public $minPrice = '';
 //    public $maxPrice = '';
     public $sortOrder = 'default';
-    public int $perPage = 9 ;
+    public int $perPage = 9;
 
     #[On('per-page-updated')]
     public function updatePerpage(int $perPage){
-        $this->perPage = $perPage;
-        $this->resetPage();
-        dd('Hàm updatePerpage ĐÃ CHẠY! perPage bây giờ là: ' . $this->perPage);
-
+        if (in_array($perPage, [6, 8, 9, 12, 15])) {
+            $this->perPage = $perPage;
+            $this->resetPage();
+        }
     }
     public function render()
     {
@@ -55,8 +56,9 @@ class Products extends Component
         } else {
             $products->orderBy('created_at', 'desc');
         }
-   dd($this->perPage);
-         $allProduct = $products->with('categories')->paginate($this->perPage);
+ //  dd($this->perPage);
+
+        $allProduct = $products->with('categories')->paginate($this->perPage);
 
         return view('livewire.products', [
             'allProduct' => $allProduct,

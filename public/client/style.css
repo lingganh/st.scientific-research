@@ -2995,25 +2995,25 @@ html {
 /* Màn hình Điện thoại nhỏ (dưới 576px) */
 @media (max-width: 575px) {
     .product-grid-container {
-        grid-template-columns: 1fr; /* Luôn 1 cột trên điện thoại nhỏ */
+        grid-template-columns: 1fr;
         gap: 15px;
     }
     .product-card {
-        height: auto; /* Cho phép chiều cao tự động để nội dung nằm ngang */
-        flex-direction: row; /* Chuyển sang bố cục ngang */
+        height: auto;
+        flex-direction: row;
         align-items: center;
-        padding: 10px; /* Thêm padding tổng thể cho card ngang */
+        padding: 10px;
     }
     .product-tumb {
-        width: 100px; /* Kích thước ảnh nhỏ hơn khi nằm ngang */
+        width: 100px;
         height: 100px;
         flex-shrink: 0;
         border-radius: 8px;
         margin-right: 15px;
-        border-bottom: none; /* Bỏ border dưới khi nằm ngang */
+        border-bottom: none;
     }
     .product-details {
-        padding: 0; /* Bỏ padding cũ, chỉ dùng padding tổng thể của card */
+        padding: 0;
         flex-grow: 1;
     }
     .product-details h4 {

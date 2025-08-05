@@ -69,10 +69,11 @@
                             <p class="no-products-message">Không tìm thấy sản phẩm nào phù hợp với tiêu chí của bạn.</p>
                         @endforelse
                     </div>
-                    <div class="pagination">
-                        {{ $allProduct->links() }}
+                    <div class="pagination-wrapper">
+                        <div class="pagination">
+                            {{ $allProduct->links() }}
+                        </div>
                     </div>
-                </div>
             </div>
         </div>
     </section>

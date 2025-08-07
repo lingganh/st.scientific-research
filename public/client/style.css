@@ -411,6 +411,7 @@ section#features {
     letter-spacing: 1px;
     margin-bottom: 1rem;
 }
+
 .text-section .description {
     width: 100%;
     line-height: 1.6;
@@ -2248,103 +2249,17 @@ html {
     width: 100%;
 }
 
-.pagination-wrapper {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 15px;
+
+
+.navbar-nav .nav-link.no-underline-hover:hover::after,
+.navbar .nav-link.no-underline-hover:hover::after {
+    width: 0 !important;
 }
 
-.pagination-wrapper  .flex {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: auto;
+.navbar .dropdown-toggle {
+    font-weight: 600;
+    color: #333;
 }
-
-.pagination-wrapper   > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between {
-    display: flex !important;
-    justify-content: center !important;
-    flex-grow: 0 !important;
-}
-
-.pagination-wrapper  > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between > div:first-child {
-    display: none !important;
-}
-
-.pagination-wrapper   > div.flex.justify-between.flex-1.sm\:hidden {
-    display: none !important;
-}
-
-.pagination-wrapper > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between > div:last-child > span > span[aria-label="« Previous"],
-.pagination-wrapper   > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between > div:last-child > a[aria-label="Next »"] {
-    display: none !important;
-}
-
-.pagination-wrapper   > div.hidden.sm\:flex-1.sm\:flex.sm\:items-center.sm\:justify-between > div:last-child > span.relative.z-0.inline-flex.rtl\:flex-row-reverse.shadow-sm.rounded-md {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    flex-wrap: wrap;
-    margin: 0 !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    gap: 5px;
-    width: auto !important;
-}
-
-.pagination-wrapper   span.relative.z-0.inline-flex.rtl\:flex-row-reverse.shadow-sm.rounded-md > span,
-.pagination-wrapper   span.relative.z-0.inline-flex.rtl\:flex-row-reverse.shadow-sm.rounded-md > a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 38px;
-    height: 38px;
-    padding: 0 8px;
-    border: none !important;
-    background-color: transparent !important;
-    border-radius: 0;
-    text-decoration: none;
-    color: #555;
-    transition: all 0.2s ease;
-    font-size: 1em;
-    font-weight: 500;
-    cursor: pointer;
-    box-sizing: border-box;
-    margin: 0 !important;
-}
-
-.pagination-wrapper   a:hover {
-    background-color: transparent !important;
-    border: none !important;
-    color: #2e4d1b;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 2px;
-}
-
-.pagination-wrapper   span[aria-current="page"] > span {
-    background-color: transparent !important;
-    color: #000;
-    border: none !important;
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-thickness: 2px;
-    cursor: default;
-}
-
-.pagination-wrapper   span[aria-disabled="true"] > span {
-    opacity: 0.6;
-    cursor: not-allowed;
-    background-color: transparent !important;
-    border: none !important;
-    color: #999;
-}
-
-
 /**************************************************/
 /**************** MEDIA QUERIES *******************/
 /**************************************************/

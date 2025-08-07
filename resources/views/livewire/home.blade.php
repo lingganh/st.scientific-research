@@ -1,45 +1,38 @@
 <div>
-    <section id="home" class="hero-slider-container" >
+    <section id="home" style="background-color: #f3f4f0; padding: 3rem 0;">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                 <div class="carousel-item active">
+                    <div class="container">
 
-
-        <div class="hero-slider"  >
-
-            <div class="hero-slide">
-                <div class="container hero-section">
-                    <div class="hero-contents">
-                        <h1 class="hero-text">
-
-                            {{$workshop->title}}
-                            <pre>
-                            </pre>
-
-                        </h1>
-                        <br/>
-
-                        <p class="hero-subText">{{$workshop->description}}</p>
-
-                        <a href="#features" class="cta button">
-                            Xem Ngay
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                        <div class="row align-items-center" style="min-height: 70vh;">
+                            <div class="col-lg-6 hero-contents">
+                                <h1 class="hero-text">{{ $workshop->title }}</h1>
+                                <p class="hero-subText">{{ $workshop->description }}</p>
+                                <a href="#features" class="cta button">
+                                    Xem Ngay
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="col-lg-6 hero-image-container text-center">
+                                <img src="{{ $workshop->img }}" class="img-fluid rounded shadow-lg" alt="Workshop Image" style="max-height: 400px; width: auto;">
+                            </div>
+                        </div>
                     </div>
-                    <article class="hero-image-container">
-                        <img
-                            src="{{$workshop->img}}"
-                            alt="green plants"
-                            loading="lazy"
-                            width="80"
-                            height="80"
-                        />
-                    </article>
-
                 </div>
+
             </div>
 
-
+             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-    </section>
-    <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); ">
+    </section>    <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); ">
         <div class="container about-section">
             <h2>Bài Viết </h2>
             <br>

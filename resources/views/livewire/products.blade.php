@@ -69,11 +69,10 @@
                             <p class="no-products-message">Không tìm thấy sản phẩm nào phù hợp với tiêu chí của bạn.</p>
                         @endforelse
                     </div>
-                    <div class="pagination-wrapper">
-                        <div class="pagination">
-                            {{ $allProduct->links() }}
-                        </div>
+                    <div class="d-flex justify-content-center">
+                        {{ $allProduct->links('pagination::bootstrap-5') }}
                     </div>
+            </div>
             </div>
         </div>
     </section>

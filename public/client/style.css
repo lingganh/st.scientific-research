@@ -347,7 +347,7 @@ html {
     user-select: none;
     pointer-events: none;
     z-index: -1;
-    background: linear-gradient(45deg, #f6f6b5c5, #88cc573b, #00f7ffa6);
+    background: linear-gradient(45deg, #f6f6b5c5, #88cc573b, #00f7ffa6); !important;
 }
 
 .social-links {
@@ -2251,7 +2251,7 @@ html {
 
 
 
-.navbar-nav .nav-link.no-underline-hover:hover::after,
+ .navbar-nav .nav-link.no-underline-hover:hover::after,
 .navbar .nav-link.no-underline-hover:hover::after {
     width: 0 !important;
 }
@@ -2259,6 +2259,63 @@ html {
 .navbar .dropdown-toggle {
     font-weight: 600;
     color: #333;
+}
+.pagination-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-wrapper nav[role="navigation"] p.text-sm,
+.pagination-wrapper nav[role="navigation"] > div.hidden {
+    display: none;
+}
+
+.pagination-wrapper nav span.relative {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    box-shadow: none !important;
+}
+
+.pagination-wrapper nav a,
+.pagination-wrapper nav span {
+    padding: 0.25rem 0.5rem;
+    color: #888;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.pagination-wrapper nav a:hover {
+    color: #000;
+}
+
+.pagination-wrapper nav span[aria-current="page"] span {
+    color: #000;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination-wrapper nav span[aria-current="page"] span::after,
+.pagination-wrapper nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #2e4d1b;
+}
+
+.pagination-wrapper nav span[aria-disabled="true"] {
+    color: #ccc;
+    cursor: not-allowed;
 }
 /**************************************************/
 /**************** MEDIA QUERIES *******************/

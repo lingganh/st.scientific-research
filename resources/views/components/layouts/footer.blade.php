@@ -1,8 +1,13 @@
 <footer class="footer">
     <div class="footer-container">
         <div class="footer-col">
-            <img src="https://vitc.edu.vn/Frond_end/images/logo_vnua-1.png" alt="VNUA Logo" style="width:160px ;height:160px ;" >
-        </div>
+            <h5>Về Chúng Tôi</h5>
+
+            <div class="logo-text">
+                <span>ST TEAM</span>
+                <span class="logo-subtext">  </span>
+            </div>
+         </div>
 
         <div class="footer-col">
             <h5>Thông tin liên hệ</h5>
@@ -14,9 +19,9 @@
             <h5>Liên kết hữu ích</h5>
             <ul>
                 <li><a href="#">Trang chủ</a></li>
-                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Kiểm Tra Đơn Hàng</a></li>
                 <li><a href="#">Sản phẩm</a></li>
-                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Góp Ý</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -29,6 +34,7 @@
         </div>
     </div>
     <div class="footer-bottom">
+
         <p>&copy; 2025 ST TEAM. All rights reserved.</p>
     </div>
 </footer>

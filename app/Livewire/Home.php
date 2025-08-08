@@ -12,7 +12,7 @@ use Livewire\Component;
 
 class Home extends Component
 {
-    public $workshop;
+    public $workshops;
     public $texts;
     public $posts;
     public $awards;
@@ -22,10 +22,10 @@ class Home extends Component
     public $categories;
     public function mount()
     {
-        $this->workshop = Workshop::latest()->first();
+        $this->workshops = Workshop::all();
         $this->texts = Text::all();
         $this->posts = Post::all();
-        $this->awards = Award::with('product')->get();
+        $this->awards = Award::with('product')->latest()->limit(4)->get();
         $this->product = Product::find('product_id');
         $this->category = Category::all();
         $this->allProduct = Product::with('categories')->inRandomOrder()->limit(6)->get();

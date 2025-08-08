@@ -40,9 +40,8 @@
                             <a class="nav-link" href="{{ route('profile.user') }}">Xin chào, {{ Auth::user()->name }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('logout') }}"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Đăng xuất
+                            <a class="nav-link" href="{{ route('logout') }}">
+                                 Đăng xuất
                             </a>
                         </li>
                     @else

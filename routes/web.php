@@ -8,6 +8,7 @@ use App\Livewire\Signup;
 use App\Livewire\TestPagination;
 use App\Livewire\UserProfile;
 use App\Livewire\VerifyOtp;
+use App\Livewire\WorkshopDetail;
 use App\Livewire\Workshops;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,7 @@ Route::get('',Home::class)->name('home');
 Route::get('product',Products::class)->name('product');
 Route::get('workshop',Workshops::class)->name('workshop');
 Route::get('/products/{productId}', ProductDetail::class)->name('product.detail');
+Route::get('/workshop/{workshopId}', WorkshopDetail::class)->name('workshop.detail');
 
 
 // Login
@@ -36,3 +38,4 @@ Route::post('/verify-otp', VerifyOtp::class)->name('verify-otp');
 //user pro5
 Route::get('profile',UserProfile::class)->name('profile.user');
 Route::get('/test-livewire', TestPagination::class);
+//

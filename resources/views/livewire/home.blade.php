@@ -2,25 +2,27 @@
     <section id="home" style="background-color: #f3f4f0; padding: 3rem 0;">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                 <div class="carousel-item active">
-                    <div class="container">
+                @foreach($workshops as $workshop)
 
+                <div class="carousel-item active">
+                    <div class="container">
                         <div class="row align-items-center" style="min-height: 70vh;">
                             <div class="col-lg-6 hero-contents">
                                 <h1 class="hero-text">{{ $workshop->title }}</h1>
                                 <p class="hero-subText">{{ $workshop->description }}</p>
-                                <a href="#features" class="cta button">
+                                <a href="{{ route('workshop.detail', ['workshopId' => $workshop->id]) }}  "  class="cta button">
                                     Xem Ngay
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>
                             <div class="col-lg-6 hero-image-container text-center">
-                                <img src="{{ $workshop->img }}" class="img-fluid rounded shadow-lg" alt="Workshop Image" style="max-height: 400px; width: auto;">
+                                <img src="{{ $workshop->img }}" class="img-fluid rounded shadow-lg" alt="Workshop Image"  >
                             </div>
                         </div>
+
                     </div>
                 </div>
-
+                    @endforeach
             </div>
 
              <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
@@ -176,7 +178,7 @@
                              <span class="product-catagory">{{$pd->categories->name ?? 'Chưa phân loại'}}</span>
                             <h4><a href="#">{{$pd->name}}</a></h4>
                             <div class="product-bottom-details">
-                                 <div class="product-price"> {{ number_format($pd->price )  ?? 'Liên Hệ'}}đ</div>
+                                <div class="product-price">{{ ($pd->price !== null) ? number_format($pd->price, 0, ',', '.') . ' VND' : 'Liên Hệ' }}</div>
                                 <div class="product-links">
                                     <a href="#"><i class="fa fa-heart"></i></a>
                                     <a href="#"><i class="fa fa-shopping-cart"></i></a>

@@ -336,6 +336,7 @@ html {
     border-radius: 8px;
     position: relative;
 }
+
 .hero-image-container::before {
     top: 0;
     left: 0;
@@ -347,8 +348,28 @@ html {
     user-select: none;
     pointer-events: none;
     z-index: -1;
-    background: linear-gradient(45deg, #f6f6b5c5, #88cc573b, #00f7ffa6); !important;
 }
+
+.hero-image-container img {
+    max-height: 450px;
+    width: auto;
+    object-fit: contain;
+    background: linear-gradient(45deg, #f6f6b5c5, #88cc573b, #00f7ffa6); !important;
+
+}
+.hero-image-container::before {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 90%;
+     padding-bottom: 90%;
+     border-radius: 50%;
+     background: linear-gradient(45deg, #f6f6b5c5, #88cc573b, #00f7ffa6);
+     transform: translate(-50%, -50%);
+     filter: blur(3rem);
+     z-index: -1;
+ }
 
 .social-links {
     order: 3;
@@ -516,8 +537,7 @@ footer {
     background-color: #3e3f3d;
 }
 
-/* strip-lines */
-.strip-line {
+ .strip-line {
     position: absolute;
     transition: .7s;
     left: 8px;
@@ -552,26 +572,25 @@ footer {
 
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
 
-/* Styles for the slider */
-.hero-slider-container {
-    overflow: hidden; /* Hide elements that go beyond the container */
-    width: 100%; /* Make the container full width */
+ .hero-slider-container {
+    overflow: hidden;
+    width: 100%;
 
 }
 
 .hero-slider {
-    display: flex; /* Arrange hero sections horizontally */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
-    width: calc(300% - 2 * 20px); /* Adjust width based on the number of slides and margin */
-    margin-left: -99%; /* Start at the second slide for initial view */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: calc(300% - 2 * 20px);
+    margin-left: -99%;
 }
 
-.hero-slide { /* New class for individual slides */
+.hero-slide {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5rem 2rem;
-    width: calc(100% / 3); /* Each section takes up one-third of the slider width */
+    width: calc(100% / 3);
     box-sizing: border-box;
 }
 
@@ -617,16 +636,14 @@ footer {
 
 
 
-/* Styles for the slider */
-.hero-slider-container {
-    overflow: hidden; /* Hide elements that go beyond the container */
-    width: 100%; /* Make the container full width */
+ .hero-slider-container {
+    overflow: hidden;
+    width: 100%;
 }
 
 .hero-slider {
-    display: flex; /* Arrange hero sections horizontally */
-    transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
-    /* Loại bỏ width và margin-left cố định */
+    display: flex; /
+    transition: transform 0.5s ease-in-out;
 }
 
 .hero-slide { /* New class for individual slides */
@@ -634,20 +651,20 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 5rem 2rem;
-    width: 100%; /* Mỗi slide chiếm 100% chiều rộng của container khi hiển thị */
-    flex-shrink: 0; /* Ngăn các slide bị thu hẹp */
+    width: 100%;
+    flex-shrink: 0 ;
     box-sizing: border-box;
 }
 
 .hero-contents {
     flex: 1;
     padding-right: 2rem;
-    min-width: 0; /* Cho phép nội dung bên trong thu nhỏ khi cần */
+    min-width: 0;
 }
 
 .hero-image-container {
     flex: 1;
-    max-width: 50%; /* Giữ max-width để không chiếm quá nhiều không gian trên desktop */
+    max-width: 50%;
 }
 
 .hero-image-container img {
@@ -686,87 +703,6 @@ footer {
     display: inline-block;
     position: relative;
 }
-footer.bg-body-tertiary {
-    background-color: #f0f3e3 !important;
-}
-hero-slider-container{
-    background-color: #f3f4f0 !important;
-}
-
-.footer {
-    background-color: #f0f3e3 !important;
-    color: #333;
-    padding: 20px 0;
-    font-size: 14px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.footer-col {
-    flex: 1;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    line-height: 2;
-    font-size: 18px;
-}
-
-.footer-col:last-child {
-    margin-right: 0;
-}
-
-.footer-col h5 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #555;
-    font-size: 25px;
-    font-weight: bold;
-}
-
-.footer-col p,
-.footer-col ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.footer-col li {
-    margin-bottom: 5px;
-}
-
-.footer-col a {
-    color: #333;
-    text-decoration: none;
-}
-
-.footer-col a:hover {
-    text-decoration: underline;
-}
-
-.footer-social a {
-    display: inline-block;
-    margin-right: 10px;
-    font-size: 30x;
-    color: #007bff;
-    text-decoration: none;
-}
-
-.footer-social a:hover {
-    opacity: 0.8;
-}
-
-.footer-bottom {
-    margin-top: 25px;
-    text-align: center;
-    border-top: 1px solid #ddd;
-    padding-top: 15px;
-}
 
 .logo-subtext {
     display: block;
@@ -781,21 +717,18 @@ hero-slider-container{
     margin-right: 10px;
     vertical-align: middle;
 }
-/* Style the logo container */
-.logo {
+ .logo {
     display: flex; /* Arrange logo and text in a row */
     align-items: center; /* Vertically align logo and text */
 }
 
-/* Style the VNUA logo image */
-.vnua-logo {
+ .vnua-logo {
     width: 50px;
     height: auto;
     margin-right: 10px;
 }
 
-/* Style the container for the main logo text and subtext */
-.logo-text {
+ .logo-text {
     display: flex;
     flex-direction: column; /* Stack the main text and subtext vertically */
     /* No need for justify-content here */
@@ -2260,62 +2193,91 @@ html {
     font-weight: 600;
     color: #333;
 }
-.pagination-wrapper {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center;
+
+/* ==========================footer============================= */
+
+.site-footer {
+    background-color: #f0f3e3;
+    color: #555;
+    padding: 60px 0 0;
+    font-size: 0.95rem;
+    border-top: 1px solid #ddd;
 }
 
-.pagination-wrapper nav[role="navigation"] p.text-sm,
-.pagination-wrapper nav[role="navigation"] > div.hidden {
-    display: none;
+.footer-heading {
+    color: #2e4d1b;
+    font-weight: 700;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
 }
 
-.pagination-wrapper nav span.relative {
+.footer-logo-section {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 2rem;
-    box-shadow: none !important;
+    margin-bottom: 1rem;
 }
 
-.pagination-wrapper nav a,
-.pagination-wrapper nav span {
-    padding: 0.25rem 0.5rem;
-    color: #888;
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
+.footer-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
 }
 
-.pagination-wrapper nav a:hover {
-    color: #000;
-}
-
-.pagination-wrapper nav span[aria-current="page"] span {
-    color: #000;
+.footer-logo-section h5 {
+    color: #2e4d1b;
     font-weight: bold;
-    cursor: default;
+    margin: 0;
 }
 
-.pagination-wrapper nav span[aria-current="page"] span::after,
-.pagination-wrapper nav a:hover::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
+.site-footer .list-unstyled li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.site-footer .list-unstyled a {
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.site-footer .list-unstyled a:hover {
+    color: #2e4d1b;
+    padding-left: 5px;
+}
+
+.footer-social .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e1e8d5;
+    color: #2e4d1b;
+    margin-right: 10px;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+}
+
+.footer-social .social-icon:hover {
     background-color: #2e4d1b;
+    color: #fff;
+    transform: translateY(-3px);
 }
 
-.pagination-wrapper nav span[aria-disabled="true"] {
-    color: #ccc;
-    cursor: not-allowed;
+.footer-bottom {
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.footer-bottom p {
+    margin: 0;
 }
 /**************************************************/
 /**************** MEDIA QUERIES *******************/

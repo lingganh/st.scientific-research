@@ -1,41 +1,40 @@
 <div>
     <section id="home" style="background-color: #f3f4f0; padding: 3rem 0;">
         <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+
+             <div class="carousel-indicators">
                 @foreach($workshops as $workshop)
-
-                <div class="carousel-item active">
-                    <div class="container">
-                        <div class="row align-items-center" style="min-height: 70vh;">
-                            <div class="col-lg-6 hero-contents">
-                                <h1 class="hero-text">{{ $workshop->title }}</h1>
-                                <p class="hero-subText">{{ $workshop->description }}</p>
-                                <a href="{{ route('workshop.detail', ['workshopId' => $workshop->id]) }}  "  class="cta button">
-                                    Xem Ngay
-                                    <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                            </div>
-                            <div class="col-lg-6 hero-image-container text-center">
-                                <img src="{{ $workshop->img }}" class="img-fluid rounded shadow-lg" alt="Workshop Image"  >
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                    @endforeach
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}" aria-current="{{ $loop->first ? 'true' : 'false' }}"></button>
+                @endforeach
             </div>
 
-             <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+            <div class="carousel-inner">
+                @foreach($workshops as $workshop)
+                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                        <div class="container">
+                            <div class="row align-items-center" style="min-height: 70vh;">
+                                <div class="col-lg-6 hero-contents">
+                                    <h1 class="hero-text">{{ $workshop->title }}</h1>
+                                    <p class="hero-subText">{{ $workshop->description }}</p>
+                                    <a href="{{ route('workshop.detail', ['workshopId' => $workshop->id]) }}" class="cta button ">
+                                        Xem Ngay
+                                        <i class="fas fa-arrow-right"></i>
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 hero-image-container text-center">
+                                    <img src="{{ $workshop->img }}" class="img-fluid rounded shadow-lg" alt="Workshop Image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+
+
+
         </div>
-    </section>    <section id="ab" class="relative" style="background-color: rgb(238, 240, 231); ">
-        <div class="container about-section">
+    </section>        <div class="container about-section">
             <h2>Bài Viết </h2>
             <br>
             <div class="marquee-container">

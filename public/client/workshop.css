@@ -139,3 +139,162 @@
         font-size: 1.8em;
     }
 }
+:root{
+    --brand: #2E4D1B;
+    --brand-600:#2a4618;
+    --brand-500:#356220;
+    --brand-300:#8fb07a;
+    --ink:#0f172a;
+    --muted:#64748b;
+    --surface:#ffffff;
+    --radius: 16px;
+    --shadow-1: 0 10px 30px rgba(0,0,0,.08);
+    --shadow-2: 0 20px 50px rgba(0,0,0,.18);
+}
+
+.workshop-header-banner{
+    position: relative;
+    padding: clamp(4rem, 6vw, 7rem) 0;
+    color:#fff;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.45)),
+    url('https://i.ytimg.com/vi/1ZGhTEltbuI/maxresdefault.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255,255,255,.15);
+    overflow: hidden;
+}
+.workshop-header-banner .overlay{
+    position:absolute; inset:0;
+    background: radial-gradient(1000px 400px at 50% -10%, rgba(46,77,27,.55), transparent 60%);
+    mix-blend-mode: multiply;
+}
+.workshop-header-banner .content{ position: relative; z-index: 1; }
+
+.workshop-search-bar{
+    position: relative;
+}
+.workshop-search-bar .form-control,
+.workshop-date-input{
+    padding-block: .9rem;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    box-shadow: var(--shadow-1);
+    transition: box-shadow .2s, border-color .2s, transform .2s;
+    background: #fff;
+}
+.workshop-search-bar .form-control{
+    padding-left: 3rem;
+}
+.workshop-search-bar .search-icon{
+    position: absolute;
+    left: 1rem; top: 50%;
+    transform: translateY(-50%);
+    color: #9aa3b2;
+    font-size: 1.05rem;
+    pointer-events: none;
+}
+.workshop-search-bar .form-control:focus,
+.workshop-date-input:focus{
+    border-color: var(--brand-300);
+    box-shadow: 0 0 0 4px rgba(53,98,32,.12);
+}
+.workshop-date-input{
+    padding-inline: 1.25rem;
+}
+
+.glass-card{
+    display:block;
+    position: relative;
+    width:100%;
+    aspect-ratio: 4/3;
+    min-height: 320px;
+    border-radius: var(--radius);
+    overflow:hidden;
+    text-decoration:none;
+    box-shadow: var(--shadow-1);
+    background: #0b1220;
+    transform: translateZ(0);
+    transition: transform .4s cubic-bezier(.175,.885,.32,1.275), box-shadow .3s ease;
+}
+@supports not (aspect-ratio: 4/3){
+    .glass-card{ height: 340px; }
+}
+.glass-card:hover{
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-2);
+}
+
+.glass-card .card-background{
+    position:absolute; inset:0;
+    background-image: var(--bg), linear-gradient(#222,#222);
+    background-size: cover;
+    background-position: center;
+    filter: saturate(1.05) contrast(1.02);
+    transition: transform .6s ease;
+}
+.glass-card:hover .card-background{ transform: scale(1.06); }
+
+.glass-card .card-scrim{
+    position:absolute; inset:0;
+    background:
+        linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.35) 35%, rgba(0,0,0,0) 65%),
+        radial-gradient(400px 160px at 70% 105%, rgba(46,77,27,.45), transparent 60%);
+    pointer-events:none;
+}
+
+.glass-card .card-content{
+    position:absolute; inset-inline: 0; bottom: 0;
+    padding: 1.25rem 1.25rem 1.35rem;
+    color:#fff; z-index: 2;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+.glass-card .card-heading{
+    font-size: clamp(1.1rem, 1.2vw + .8rem, 1.35rem);
+    font-weight: 800;
+    letter-spacing:.2px;
+    margin: 0 0 .35rem 0;
+    line-height: 1.25;
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+.glass-card .card-description{
+    font-size: .95rem;
+    line-height: 1.5;
+    opacity: .95;
+    max-height: 3.9em;
+    overflow: hidden;
+}
+
+.date-badge{
+    background: rgba(255,255,255,.15);
+    color:#fff;
+    border: 1px solid rgba(255,255,255,.25);
+    padding: .4rem .9rem;
+    font-weight: 600;
+    backdrop-filter: blur(6px);
+}
+
+.empty-state{
+    background: linear-gradient(180deg, #fafafa, #fff);
+    border: 1px solid #eee;
+    border-radius: calc(var(--radius) + 6px);
+    box-shadow: var(--shadow-1);
+}
+.empty-icon{
+    width:64px; height:64px; border-radius: 50%;
+    display:inline-grid; place-items:center;
+    background: rgba(53,98,32,.08);
+    color: var(--brand-500);
+    font-size: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce){
+    .glass-card,
+    .glass-card .card-background{
+        transition: none !important;
+    }
+}
+
+.pagination .page-item .page-link{
+    border-radius: 10px;
+}

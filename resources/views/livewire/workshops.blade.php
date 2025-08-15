@@ -35,7 +35,7 @@
              <div class="row g-4">
                 @forelse($workshops as $workshop)
                     <div class="col-xl-4 col-md-6">
-                        <a href="{{ route('workshop.detail', ['workshopId' => $workshop->id]) }}" class="glass-card">
+                        <a href="{{ route('workshop.detail', ['workshop' => $workshop->id]) }}" class="glass-card">
                             <div class="card-background" style="--bg: url('{{ $workshop->img }}')"></div>
 
                             <div class="card-scrim"></div>

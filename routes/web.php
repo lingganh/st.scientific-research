@@ -21,7 +21,7 @@ Route::get('',Home::class)->name('home');
 Route::get('product',Products::class)->name('product');
 Route::get('workshop',Workshops::class)->name('workshop');
 Route::get('/products/{productId}', ProductDetail::class)->name('product.detail');
-Route::get('/workshop/{workshopId}', WorkshopDetail::class)->name('workshop.detail');
+Route::get('/workshop/{workshop}', WorkshopDetail::class)->name('workshop.detail');
 
 
 // Login

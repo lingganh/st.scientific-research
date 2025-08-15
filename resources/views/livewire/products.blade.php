@@ -47,20 +47,35 @@
                 <div class="product-main-content">
                     <div class="product-grid-container">
                         @forelse($allProduct as $pd)
-                            <div class="product-card">
+                            <div class="product-card"
+                                 x-on:click="window.location='{{ route('product.detail', ['productId' => $pd->id]) }}'"
+                                 role="link"
+                                 tabindex="0"
+                                 x-on:keydown.enter="window.location='{{ route('product.detail', ['productId' => $pd->id]) }}'"
+                                 x-on:keydown.space.prevent="window.location='{{ route('product.detail', ['productId' => $pd->id]) }}'">
+
                                 <div class="product-tumb">
-                                    <img src="{{$pd->img}}" alt="{{$pd->name ?? 'Sản phẩm'}}">
+                                    <img src="{{ $pd->img }}"
+                                         alt="{{ $pd->name ?? 'Sản phẩm' }}"
+                                         loading="lazy"
+                                         onerror="this.onerror=null;this.src='https://placehold.co/600x600?text=No+Image';">
                                 </div>
+
                                 <div class="product-details">
-                                     <span class="product-catagory">
-                                         {{ $pd->categories->first()->name ?? 'Chưa phân loại' }}
-                                    </span>
-                                    <h4><a href="{{ route('product.detail', ['productId' => $pd->id]) }}">{{$pd->name}}</a></h4>
+                                    <span class="product-catagory">{{ $pd->categories->first()->name ?? 'Chưa phân loại' }}</span>
+
+                                     <h4 class="product-title">{{ $pd->name }}</h4>
+
                                     <div class="product-bottom-details">
-                                        <div class="product-price">{{ ($pd->price !== null) ? number_format($pd->price, 0, ',', '.') . ' VND' : 'Liên Hệ' }}</div>
+                                        <div class="product-price">
+                                            {{ ($pd->price !== null) ? number_format($pd->price, 0, ',', '.') . ' VND' : 'Liên Hệ' }}
+                                        </div>
+
                                         <div class="product-links">
-                                            <a href="#"><i class="fa fa-heart"></i></a>
-                                            <a href="#"><i class="fa fa-shopping-cart"></i></a>
+                                                  <a href="#"><i class="fa fa-heart"></i></a>
+
+                                                 <a href="#"><i class="fa fa-shopping-cart"></i></a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -68,6 +83,7 @@
                         @empty
                             <p class="no-products-message">Không tìm thấy sản phẩm nào phù hợp với tiêu chí của bạn.</p>
                         @endforelse
+
                     </div>
                     <div class="pagination-wrapper">
                         <div class="pagination">
@@ -78,5 +94,7 @@
         </div>
         </div>
     </section>
+<style>
 
+</style>
  </div>

@@ -1,7 +1,10 @@
 <?php
 
+use App\Livewire\CartPage;
 use App\Livewire\Login;
 use App\Livewire\Home;
+use App\Livewire\PostDetail;
+use App\Livewire\Posts;
 use App\Livewire\ProductDetail;
 use App\Livewire\Products;
 use App\Livewire\Signup;
@@ -20,9 +23,11 @@ Route::get('/', function () {
 Route::get('',Home::class)->name('home');
 Route::get('product',Products::class)->name('product');
 Route::get('workshop',Workshops::class)->name('workshop');
-Route::get('/products/{productId}', ProductDetail::class)->name('product.detail');
-Route::get('/workshop/{workshop}', WorkshopDetail::class)->name('workshop.detail');
-
+Route::get('products/{productId?}', ProductDetail::class)->name('product.detail');
+Route::get('workshop/{workshop?}', WorkshopDetail::class)->name('workshop.detail');
+Route::get('posts', Posts::class)->name('posts');
+Route::get('posts/{post?}', PostDetail::class)->name('post.detail');
+Route::get('/cart', CartPage::class)->name('cart');
 
 // Login
 //Google

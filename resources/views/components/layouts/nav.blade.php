@@ -27,7 +27,7 @@
                         <a class="nav-link" href="{{ route('workshop') }}">Hội Thảo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Bài Viết</a>
+                        <a class="nav-link" href="{{ route('posts') }}">Bài Viết</a>
                     </li>
 
 

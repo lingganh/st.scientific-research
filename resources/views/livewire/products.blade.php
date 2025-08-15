@@ -85,14 +85,13 @@
                         @endforelse
 
                     </div>
-                    <div class="pagination-wrapper">
-                        <div class="pagination">
-                            {{ $allProduct->links() }}
-                        </div>
-                    </div>
+
             </div>
         </div>
         </div>
+         <div class="d-flex justify-content-center mt-5">
+             {{ $allProduct->links('pagination::bootstrap-5') }}
+         </div>
     </section>
 <style>
 

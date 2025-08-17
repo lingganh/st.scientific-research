@@ -93,7 +93,5 @@
              {{ $allProduct->links('pagination::bootstrap-5') }}
          </div>
     </section>
-<style>
 
-</style>
  </div>

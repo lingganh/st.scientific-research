@@ -7,12 +7,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ config('app.name') }}</title>
           <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-
-
-
-
         @livewireStyles
+
+        @livewireScripts
+
+
+
     </head>
 
 <body>
@@ -28,7 +28,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
- @livewireScripts
+
 
 
 

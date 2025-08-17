@@ -33,7 +33,7 @@
 
                  <ul class="navbar-nav d-lg-none">
                     <li class="nav-item">
-                        <a class="nav-link" href="giohang.html">Giỏ hàng</a>
+                        <a class="nav-link" href="{{route('cart')}}">Giỏ hàng</a>
                     </li>
                     @if (Auth::check())
                         <li class="nav-item">
@@ -53,7 +53,7 @@
             </div>
 
              <div class="d-none d-lg-flex align-items-center">
-                <a class="nav-link no-underline-hover" href="giohang.html">
+                <a class="nav-link no-underline-hover" href="{{route('cart')}}">
                     <i class="fa fa-shopping-cart cart-icon"></i>
                     <span class='badge badge-warning' id='lblCartCount'>5</span>
                 </a>

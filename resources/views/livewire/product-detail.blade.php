@@ -41,9 +41,6 @@
                             @endif
                         </div>
 
-{{--                        <p class="pdp-info__description">--}}
-{{--                            {{ $product->short_description ?? 'Sản phẩm chưa có mô tả ngắn. Trải nghiệm hiệu năng đỉnh cao và thiết kế sang trọng.' }}--}}
-{{--                        </p>--}}
 
                         <div class="pdp-action-group">
                             <div class="pdp-main-actions">
@@ -57,7 +54,8 @@
                                     <i class="far fa-heart"></i>
                                 </button>
 
-                                <button class="pdp-btn pdp-btn--add-to-cart"><i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Thêm vào giỏ</button>
+
+                                <button class="pdp-btn pdp-btn--add-to-cart" wire:click="addToCart"><i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> Thêm vào giỏ</button>
                             </div>
                             <button class="pdp-btn pdp-btn--buy-now">Mua ngay</button>
                         </div>

@@ -2,8 +2,10 @@
 
 namespace App\Livewire;
 
+use Darryldecode\Cart\Facades\CartFacade as Cart;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use App\Models\Product; // Import model Product
+use App\Models\Product;
 use App\Models\Category;
 
 class ProductDetail extends Component
@@ -26,6 +28,30 @@ class ProductDetail extends Component
             return redirect()->route('products');
         }
     }
+    public function addToCart()
+    {
+        if (!Auth::check()) {
+             session()->flash('error', 'Vui lòng đăng nhập để thêm sản phẩm!');
+
+             return redirect()->route('login');
+        }
+
+        $p = $this->product;
+        Cart::session(Auth::id())->add([
+            'id'       => $p->id,
+            'name'     => $p->name ?? ('Product '.$p->id),
+            'price'    => (float)($p->price ?? 0),
+            'quantity' => 1,
+            'attributes' => [],
+            'associatedModel' => $p,
+        ]);
+        // test
+        session()->flash('success', ' thêm sp thành công ');
+        return redirect()->route('product');
+
+
+    }
+
 
     public function render()
     {
